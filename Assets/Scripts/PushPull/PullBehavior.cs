@@ -16,8 +16,11 @@ public class PullBehavior : MonoBehaviour
         Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, 90) * direction);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
 
+        //Rotate ball in direction of player pulling
+        pullObject.transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, 0.001f * Time.deltaTime);
+
         //Keep ball a certain distance away
-        if(direction.magnitude > 1.5)
+        if (direction.magnitude > 1.5)
             pullObject.transform.position = Vector2.MoveTowards(pullObject.transform.position, transform.position, 0.01f);
     }
 }

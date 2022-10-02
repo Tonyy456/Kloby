@@ -26,7 +26,6 @@ public class CharacterActionController : MonoBehaviour
 
     private void Pull(InputAction.CallbackContext context)
     {
-        Debug.Log("Pulling!");
         var component = GetComponent<PullBehavior>();
         if(component != null)
         {

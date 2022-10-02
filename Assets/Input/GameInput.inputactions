@@ -67,6 +67,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "WASDboost",
+                    "type": "Button",
+                    "id": "91b9a72a-a6da-41c9-9b66-38327c4607e1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Arrowsboost",
+                    "type": "Button",
+                    "id": "c084eb47-31bf-4950-a3a8-ec30bab31d0e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -149,8 +167,30 @@
                 },
                 {
                     "name": "",
+                    "id": "1ed6e83c-f49c-4b80-ac68-2965d807bb39",
+                    "path": "<Keyboard>/rightMeta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ArrowsPush",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4c0e796d-9e0a-45d1-ac86-1ed0b3c88d3c",
                     "path": "<Keyboard>/numpadPeriod",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ArrowsPull",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ce7817d0-4f06-43c3-9edc-7d09fe31d079",
+                    "path": "<Keyboard>/alt",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -234,6 +274,28 @@
                     "action": "ArrowsMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "1fa8b27f-7ba3-4484-aa38-d6d0d7de34df",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WASDboost",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8390cafb-5081-4ffd-942b-bb596ce8b235",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Arrowsboost",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

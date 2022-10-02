@@ -18,7 +18,6 @@ public class PushColliderCheck : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && collision.gameObject != callerObject)
         {
-            Debug.Log("Detected: " + collision.gameObject.name);
             Vector2 direction = collision.gameObject.transform.position - callerObject.transform.position;
             direction.Normalize();
             collision.gameObject.AddComponent<PushBehavior>().Initialize(direction, 5f,1f);

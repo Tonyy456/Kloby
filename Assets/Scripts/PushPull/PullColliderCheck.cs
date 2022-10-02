@@ -18,7 +18,6 @@ public class PullColliderCheck : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ball" && callerObject.GetComponent<PullBehavior>() == null)
         {
-            Debug.Log("Detected: " + collision.gameObject.name);
             callerObject.gameObject.AddComponent<PullBehavior>().pullObject = collision.gameObject;
         }
     }

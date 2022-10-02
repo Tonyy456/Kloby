@@ -9,6 +9,9 @@ public class InputManager : MonoBehaviour
     [SerializeField] private GameObject dotPrefab;
     [SerializeField] private GameObject PushColliderCheck;
 
+    public static bool GameRunning = false;
+    public static float countdown = 5f;
+
 /*    private PushPullHandler ppHandler;*/
     private GameInput gameInput;
     public void Start()
@@ -16,7 +19,8 @@ public class InputManager : MonoBehaviour
         gameInput = new GameInput();
 
         bluePlayer.GetComponent<MovementController>().SetInputAction(
-            gameInput.Kloby.WASDMovement);
+            gameInput.Kloby.WASDMovement,
+            gameInput.Kloby.WASDboost);
         bluePlayer.GetComponent<CharacterActionController>().InitializeInput(
             gameInput.Kloby.WASDPush,
             gameInput.Kloby.WASDPull,
@@ -24,10 +28,30 @@ public class InputManager : MonoBehaviour
 
 
         redPlayer.GetComponent<MovementController>().SetInputAction(
-            gameInput.Kloby.ArrowsMovement);
+            gameInput.Kloby.ArrowsMovement,
+            gameInput.Kloby.Arrowsboost);
         redPlayer.GetComponent<CharacterActionController>().InitializeInput(
             gameInput.Kloby.ArrowsPush,
             gameInput.Kloby.ArrowsPull,
             PushColliderCheck);
+
+        PointChangeHandler.OnPointChange += ResetCD;
+    }
+
+    public void ResetCD()
+    {
+        GameRunning = false;
+        countdown = 5f;
+    }
+
+    public void Update()
+    {     
+        if (!GameRunning)
+        {
+            countdown -= Time.deltaTime;
+            if (countdown < 0f)
+                GameRunning = true;
+        }
+
     }
 }
