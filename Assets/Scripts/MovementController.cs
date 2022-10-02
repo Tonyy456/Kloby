@@ -18,16 +18,14 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (movementAction != null)
+        Vector2 speedVector = movementAction.ReadValue<Vector2>();
+        if (GetComponent<PullBehavior>() == null && speedVector != Vector2.zero)
         {
-            Vector2 speedVector = movementAction.ReadValue<Vector2>();
-            if (speedVector != Vector2.zero)
-            {
-                Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, 90) * speedVector);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-            }
-
-            this.transform.Translate(speedVector * speed, Space.World);
+            Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, 90) * speedVector);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
+
+        this.transform.Translate(speedVector * speed * Time.deltaTime, Space.World);
+
     }
 }

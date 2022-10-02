@@ -7,22 +7,27 @@ public class InputManager : MonoBehaviour
     [SerializeField] private GameObject bluePlayer;
     [SerializeField] private GameObject redPlayer;
     [SerializeField] private GameObject dotPrefab;
+    [SerializeField] private GameObject PushColliderCheck;
 
-    private PushPullHandler ppHandler;
+/*    private PushPullHandler ppHandler;*/
     private GameInput gameInput;
     public void Start()
     {
         gameInput = new GameInput();
-        ppHandler = new PushPullHandler(gameInput.FootballActions.Push, gameInput.FootballActions.Pull)
-        {
-            User1 = redPlayer,
-            User2 = bluePlayer,
-            prefab = dotPrefab
-        };
 
         bluePlayer.GetComponent<MovementController>().SetInputAction(
-            gameInput.FootballActions.Arrows);
+            gameInput.Kloby.WASDMovement);
+        bluePlayer.GetComponent<CharacterActionController>().InitializeInput(
+            gameInput.Kloby.WASDPush,
+            gameInput.Kloby.WASDPull,
+            PushColliderCheck);
+
+
         redPlayer.GetComponent<MovementController>().SetInputAction(
-            gameInput.FootballActions.WASD);
+            gameInput.Kloby.ArrowsMovement);
+        redPlayer.GetComponent<CharacterActionController>().InitializeInput(
+            gameInput.Kloby.ArrowsPush,
+            gameInput.Kloby.ArrowsPull,
+            PushColliderCheck);
     }
 }
