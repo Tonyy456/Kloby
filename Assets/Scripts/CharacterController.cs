@@ -121,7 +121,7 @@ public class CharacterController : MonoBehaviour
 
 
         }
-            playerObject.transform.Translate(dPosition, Space.World);
+        playerObject.transform.Translate(dPosition, Space.World);
     }
 
 }
