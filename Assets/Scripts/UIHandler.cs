@@ -12,7 +12,6 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bluePlayerName;
     [SerializeField] private TextMeshProUGUI redPlayerName;
 
-
     private int bs = 0;
     private int rs = 0;
     private float secondsleft = 0;

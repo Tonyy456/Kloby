@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class CharacterController : MonoBehaviour
@@ -10,11 +11,13 @@ public class CharacterController : MonoBehaviour
     public PullBehavior PullBehavior {
         get
         {
-            Debug.Log(playerObject.name);
             return playerObject.transform.gameObject.GetComponent<PullBehavior>();
         }
     }
 
+    [Header("SLIDERS")]
+    [SerializeField] private Slider run;
+    [SerializeField] private Slider hold;
 
     [Header("MOVEMENT")]
     [SerializeField] private float walkingSpeed = 5;
@@ -163,6 +166,10 @@ public class CharacterController : MonoBehaviour
             if (currPullTime > 0)
                 currPullTime -= Time.deltaTime;
         }
+
+        //Move the sliders accordingly
+        run.value = (maxSprintTime - currSprintTime) / maxSprintTime;
+        hold.value = (maxPullTime - currPullTime) / maxPullTime;
         playerObject.transform.Translate(dPosition, Space.World);
     }
 }
