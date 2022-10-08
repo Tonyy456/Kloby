@@ -1,13 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class OptionsMenuHandler : MonoBehaviour
 {
     [SerializeField] private int maxStringLength = 5;
-    public void SetGameTime(float time)
+    [SerializeField] private TMPro.TMP_InputField gameTimeText;
+    [SerializeField] private TMPro.TMP_InputField textField;
+    public void SetGameTime()
     {
-        Game.gameTime = time;
+        try
+        {
+            
+            float time = Int32.Parse(gameTimeText.text);
+            time = Mathf.Clamp(time, 20, 360);
+            Game.gameTime = time;
+        }
+        catch (FormatException) { }
+    }
+
+    public void SetResetTime()
+    {
+        try
+        {
+
+            float time = Int32.Parse(textField.text);
+            time = Mathf.Clamp(time, 0, 10);
+            Game.countdown = time;
+        }
+        catch (FormatException) { }
     }
 
     public void SetBlueName(string name)

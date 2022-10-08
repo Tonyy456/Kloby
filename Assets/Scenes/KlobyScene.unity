@@ -523,7 +523,7 @@ MonoBehaviour:
   flipRotation: 0
   maxSprintTime: 2
   currSprintTime: 0
-  maxPullTime: 5
+  maxPullTime: 1000
   currPullTime: 0
 --- !u!1 &476173331
 GameObject:

@@ -12,7 +12,7 @@ public class Game
     public static GameOver OnGameOver;
 
     public static bool GameRunning = false;
-    public static float countdown = 4f;
+    public static float countdown = 3f;
     public static float gameTime = 120f;
 
     public static string bluePlayer = "";
