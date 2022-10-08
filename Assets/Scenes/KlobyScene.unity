@@ -438,11 +438,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObject: {fileID: 513664304}
-  speed: 5
-  sprintspeed: 10
+  walkingSpeed: 5
+  sprintSpeed: 10
   rotationSpeed: 100000
   springConstant: 0
-  ballMaxDistance: 3
+  ballMaxDistance: 10
+  pushForce: 500
   flipRotation: 0
 --- !u!1 &476173331
 GameObject:
@@ -602,7 +603,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 500
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -1521,11 +1522,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObject: {fileID: 2013367264}
-  speed: 5
-  sprintspeed: 10
+  walkingSpeed: 5
+  sprintSpeed: 10
   rotationSpeed: 100000
   springConstant: 0
-  ballMaxDistance: 3
+  ballMaxDistance: 10
+  pushForce: 500
   flipRotation: 1
 --- !u!4 &1159269493
 Transform:
@@ -1815,7 +1817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resetHandler: {fileID: 1359341744}
   UIhandler: {fileID: 1878859323}
-  team: 2
+  team: 1
 --- !u!61 &1278110111
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1942,7 +1944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resetHandler: {fileID: 1359341744}
   UIhandler: {fileID: 1878859323}
-  team: 1
+  team: 2
 --- !u!61 &1290460673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2761,8 +2763,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 2
+  m_AngularDrag: 500
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -2954,6 +2956,14 @@ PrefabInstance:
     - target: {fileID: 8608812730086123345, guid: 9ff4102c96ce94fed9bf911b4fd7f0c7, type: 3}
       propertyPath: m_SortingOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608812730086123347, guid: 9ff4102c96ce94fed9bf911b4fd7f0c7, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608812730086123347, guid: 9ff4102c96ce94fed9bf911b4fd7f0c7, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8608812730086123348, guid: 9ff4102c96ce94fed9bf911b4fd7f0c7, type: 3}
       propertyPath: m_Radius
