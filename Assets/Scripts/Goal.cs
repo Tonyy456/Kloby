@@ -12,6 +12,12 @@ public class Goal : MonoBehaviour
 
 
     private float triggerCD = 0f;
+
+    private void Start()
+    {
+        Game.OnGameOver += Reset;
+        Game.OnPointChange += Reset;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ball" && triggerCD <= 0f)
@@ -19,7 +25,7 @@ public class Goal : MonoBehaviour
             Debug.Log("Collision");
             triggerCD = 2f;
             resetHandler.Reset();
-            PointChangeHandler.PointChange();
+            Game.PointChange();
             switch (team)
             {
                 case 1:
@@ -33,6 +39,11 @@ public class Goal : MonoBehaviour
             }
         } 
 
+    }
+
+    private void Reset()
+    {
+        resetHandler.Reset();
     }
 
     private void Update()

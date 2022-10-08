@@ -8,6 +8,7 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float speed = 3;
     [SerializeField] private float sprintspeed = 4;
     [SerializeField] private float rotationSpeed;
+    public bool flipRotation = false;
     private InputAction movementAction;
     private float movespeed;
 
@@ -41,12 +42,14 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!InputManager.GameRunning) return;
+        if (!Game.GameRunning) return;
 
         Vector2 speedVector = movementAction.ReadValue<Vector2>();
         if (GetComponent<PullBehavior>() == null && speedVector != Vector2.zero)
         {
-            Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, 90) * speedVector);
+            Vector3 forward = Vector3.forward;
+            if(flipRotation) forward = -forward;
+            Quaternion toRotation = Quaternion.LookRotation(forward, Quaternion.Euler(0, 0, 90) * speedVector);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
 

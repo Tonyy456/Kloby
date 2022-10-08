@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
@@ -8,50 +9,77 @@ public class InputManager : MonoBehaviour
     [SerializeField] private GameObject redPlayer;
     [SerializeField] private GameObject dotPrefab;
     [SerializeField] private GameObject PushColliderCheck;
-
-    public static bool GameRunning = false;
-    public static float countdown = 5f;
+    [SerializeField] private GameObject Rope;
 
 /*    private PushPullHandler ppHandler;*/
     private GameInput gameInput;
     public void Start()
     {
-        gameInput = new GameInput();
+        Game.ropeObject = Rope;
+        GameInput game = new GameInput();
+        InitializeWindows(game);
+        this.gameInput = game;
+    }
 
+    private void QuitAction_performed(InputAction.CallbackContext obj)
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+        Application.Quit();
+    }
+
+    private void InitializeWindows(GameInput game)
+    {
+        var actions = game.Kloby;
+        actions.Quit.performed += QuitAction_performed;
+        actions.Quit.Enable();
         bluePlayer.GetComponent<MovementController>().SetInputAction(
-            gameInput.Kloby.WASDMovement,
-            gameInput.Kloby.WASDboost);
+            actions.WASDMovement,
+            actions.WASDboost);
         bluePlayer.GetComponent<CharacterActionController>().InitializeInput(
-            gameInput.Kloby.WASDPush,
-            gameInput.Kloby.WASDPull,
+            actions.WASDPush,
+            actions.WASDPull,
             PushColliderCheck);
 
 
         redPlayer.GetComponent<MovementController>().SetInputAction(
-            gameInput.Kloby.ArrowsMovement,
-            gameInput.Kloby.Arrowsboost);
+            actions.ArrowsMovement,
+            actions.Arrowsboost);
         redPlayer.GetComponent<CharacterActionController>().InitializeInput(
-            gameInput.Kloby.ArrowsPush,
-            gameInput.Kloby.ArrowsPull,
+            actions.ArrowsPush,
+            actions.ArrowsPull,
             PushColliderCheck);
-
-        PointChangeHandler.OnPointChange += ResetCD;
     }
 
-    public void ResetCD()
+    private void InitializeMacos(GameInput game)
     {
-        GameRunning = false;
-        countdown = 5f;
+        var actions = game.KlobyMacOS;
+        bluePlayer.GetComponent<MovementController>().SetInputAction(
+            actions.WASDMovement,
+            actions.WASDboost);
+        bluePlayer.GetComponent<CharacterActionController>().InitializeInput(
+            actions.WASDPush,
+            actions.WASDPull,
+            PushColliderCheck);
+
+
+        redPlayer.GetComponent<MovementController>().SetInputAction(
+            actions.ArrowsMovement,
+            actions.Arrowsboost);
+        redPlayer.GetComponent<CharacterActionController>().InitializeInput(
+            actions.ArrowsPush,
+            actions.ArrowsPull,
+            PushColliderCheck);
     }
 
     public void Update()
     {     
-        if (!GameRunning)
+        if (!Game.GameRunning)
         {
-            countdown -= Time.deltaTime;
-            if (countdown < 0f)
-                GameRunning = true;
+            Game.countdown -= Time.deltaTime;
+            if (Game.countdown < 0f)
+                Game.GameRunning = true;
         }
-
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class CharacterActionController : MonoBehaviour
 {
-
     private GameObject colliderChecker;
     public void InitializeInput(InputAction pushAction, InputAction pullAction, GameObject collider)
     {
@@ -14,6 +13,15 @@ public class CharacterActionController : MonoBehaviour
         pullAction.performed += Pull;
         pullAction.Enable();
         colliderChecker = collider;
+
+        Game.OnPointChange += StopConnections;
+    }
+
+    private void StopConnections()
+    {
+        Debug.Log("Stopped connections");
+        Destroy(this.GetComponent<PushBehavior>());
+        Destroy(this.GetComponent<PullBehavior>());
     }
 
     private void Push(InputAction.CallbackContext context)
@@ -33,7 +41,12 @@ public class CharacterActionController : MonoBehaviour
             return;
         }
         GameObject outObj = GameObject.Instantiate(colliderChecker);
-        outObj.AddComponent<PullColliderCheck>().callerObject = this.gameObject;
+        if(outObj.GetComponent<PullColliderCheck>() == null)
+        {
+            outObj.AddComponent<PullColliderCheck>().callerObject = this.gameObject;
+            Debug.Log("made it here");
+        }
+            
         outObj.transform.position = transform.position + Quaternion.AngleAxis(-90, new Vector3(0, 0, 1)) * transform.up.normalized;
     }
 }

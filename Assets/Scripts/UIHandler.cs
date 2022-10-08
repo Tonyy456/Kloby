@@ -9,17 +9,22 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI redScore;
     [SerializeField] private TextMeshProUGUI time;
     [SerializeField] private TextMeshProUGUI countdownTime;
+    [SerializeField] private TextMeshProUGUI bluePlayerName;
+    [SerializeField] private TextMeshProUGUI redPlayerName;
 
 
     private int bs = 0;
     private int rs = 0;
     private float secondsleft = 0;
-    private const float gameTime = 120f;
+    private float gameTime = 120f;
 
     public void Start()
     {
+        gameTime = Game.gameTime;
         secondsleft = gameTime;
-        PointChangeHandler.OnPointChange += ResetTime;
+        bluePlayerName.text = Game.bluePlayer;
+        redPlayerName.text = Game.redPlayer;
+        Game.OnGameOver += Reset;
     }
 
     public void RedScore()
@@ -32,27 +37,31 @@ public class UIHandler : MonoBehaviour
         bs += 1;
     }
 
-    public void ResetTime()
+    private void Reset()
     {
         secondsleft = gameTime;
     }
 
-
-
     // Update is called once per frame
     private void Update()
     {
-        if (InputManager.countdown > 0.1f)
-            countdownTime.text = "" + Mathf.FloorToInt(InputManager.countdown);
+        //Set game countdown
+        if (Game.countdown > 0.1f)
+            countdownTime.text = "" + Mathf.FloorToInt(Game.countdown);
         else
             countdownTime.text = "";
 
+        //Display scores
         blueScore.text = "" + bs;
         redScore.text = "" + rs;
 
-        if(secondsleft > 0f && InputManager.GameRunning)
+        //Update time left
+        if(secondsleft > 0f && Game.GameRunning)
             secondsleft -= Time.deltaTime;
+        if(secondsleft < 0f)
+            Game.GameEnded();
 
+        //Display the time left
         int minutes = Mathf.FloorToInt(secondsleft / 60f);
         int seconds = Mathf.FloorToInt(secondsleft % 60);
         time.text = string.Format("{0:00}:{1:00}", minutes, seconds);

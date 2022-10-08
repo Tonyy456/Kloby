@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class PointChangeHandler
+/*public static class Game
 {
     public delegate void PointChangeEvent();
     public static PointChangeEvent OnPointChange;
@@ -16,4 +16,4 @@ public static class PointChangeHandler
 
     }
 
-}
+}*/

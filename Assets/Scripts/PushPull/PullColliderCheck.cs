@@ -11,7 +11,7 @@ public class PullColliderCheck : MonoBehaviour
     }
     private IEnumerator StartDisappear()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(6f);
         Destroy(this.gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)
