@@ -91,18 +91,18 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Quit"",
+                    ""name"": ""Arrowsboost"",
                     ""type"": ""Button"",
-                    ""id"": ""9be27fb0-08f5-47de-be12-435ee9c5571c"",
+                    ""id"": ""c084eb47-31bf-4950-a3a8-ec30bab31d0e"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Arrowsboost"",
+                    ""name"": ""Quit"",
                     ""type"": ""Button"",
-                    ""id"": ""c084eb47-31bf-4950-a3a8-ec30bab31d0e"",
+                    ""id"": ""9be27fb0-08f5-47de-be12-435ee9c5571c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -299,23 +299,23 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8390cafb-5081-4ffd-942b-bb596ce8b235"",
-                    ""path"": ""<Keyboard>/shift"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Arrowsboost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""1fa8b27f-7ba3-4484-aa38-d6d0d7de34df"",
                     ""path"": ""<Keyboard>/l"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""WASDboost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8390cafb-5081-4ffd-942b-bb596ce8b235"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Arrowsboost"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -609,8 +609,8 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         m_KlobyMacOS_ArrowsMovement = m_KlobyMacOS.FindAction("ArrowsMovement", throwIfNotFound: true);
         m_KlobyMacOS_ArrowsPush = m_KlobyMacOS.FindAction("ArrowsPush", throwIfNotFound: true);
         m_KlobyMacOS_ArrowsPull = m_KlobyMacOS.FindAction("ArrowsPull", throwIfNotFound: true);
-        m_KlobyMacOS_Quit = m_KlobyMacOS.FindAction("Quit", throwIfNotFound: true);
         m_KlobyMacOS_Arrowsboost = m_KlobyMacOS.FindAction("Arrowsboost", throwIfNotFound: true);
+        m_KlobyMacOS_Quit = m_KlobyMacOS.FindAction("Quit", throwIfNotFound: true);
         // Kloby
         m_Kloby = asset.FindActionMap("Kloby", throwIfNotFound: true);
         m_Kloby_WASDMovement = m_Kloby.FindAction("WASDMovement", throwIfNotFound: true);
@@ -688,8 +688,8 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_KlobyMacOS_ArrowsMovement;
     private readonly InputAction m_KlobyMacOS_ArrowsPush;
     private readonly InputAction m_KlobyMacOS_ArrowsPull;
-    private readonly InputAction m_KlobyMacOS_Quit;
     private readonly InputAction m_KlobyMacOS_Arrowsboost;
+    private readonly InputAction m_KlobyMacOS_Quit;
     public struct KlobyMacOSActions
     {
         private @GameInput m_Wrapper;
@@ -701,8 +701,8 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         public InputAction @ArrowsMovement => m_Wrapper.m_KlobyMacOS_ArrowsMovement;
         public InputAction @ArrowsPush => m_Wrapper.m_KlobyMacOS_ArrowsPush;
         public InputAction @ArrowsPull => m_Wrapper.m_KlobyMacOS_ArrowsPull;
-        public InputAction @Quit => m_Wrapper.m_KlobyMacOS_Quit;
         public InputAction @Arrowsboost => m_Wrapper.m_KlobyMacOS_Arrowsboost;
+        public InputAction @Quit => m_Wrapper.m_KlobyMacOS_Quit;
         public InputActionMap Get() { return m_Wrapper.m_KlobyMacOS; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -733,12 +733,12 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 @ArrowsPull.started -= m_Wrapper.m_KlobyMacOSActionsCallbackInterface.OnArrowsPull;
                 @ArrowsPull.performed -= m_Wrapper.m_KlobyMacOSActionsCallbackInterface.OnArrowsPull;
                 @ArrowsPull.canceled -= m_Wrapper.m_KlobyMacOSActionsCallbackInterface.OnArrowsPull;
-                @Quit.started -= m_Wrapper.m_KlobyMacOSActionsCallbackInterface.OnQuit;
-                @Quit.performed -= m_Wrapper.m_KlobyMacOSActionsCallbackInterface.OnQuit;
-                @Quit.canceled -= m_Wrapper.m_KlobyMacOSActionsCallbackInterface.OnQuit;
                 @Arrowsboost.started -= m_Wrapper.m_KlobyMacOSActionsCallbackInterface.OnArrowsboost;
                 @Arrowsboost.performed -= m_Wrapper.m_KlobyMacOSActionsCallbackInterface.OnArrowsboost;
                 @Arrowsboost.canceled -= m_Wrapper.m_KlobyMacOSActionsCallbackInterface.OnArrowsboost;
+                @Quit.started -= m_Wrapper.m_KlobyMacOSActionsCallbackInterface.OnQuit;
+                @Quit.performed -= m_Wrapper.m_KlobyMacOSActionsCallbackInterface.OnQuit;
+                @Quit.canceled -= m_Wrapper.m_KlobyMacOSActionsCallbackInterface.OnQuit;
             }
             m_Wrapper.m_KlobyMacOSActionsCallbackInterface = instance;
             if (instance != null)
@@ -764,12 +764,12 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 @ArrowsPull.started += instance.OnArrowsPull;
                 @ArrowsPull.performed += instance.OnArrowsPull;
                 @ArrowsPull.canceled += instance.OnArrowsPull;
-                @Quit.started += instance.OnQuit;
-                @Quit.performed += instance.OnQuit;
-                @Quit.canceled += instance.OnQuit;
                 @Arrowsboost.started += instance.OnArrowsboost;
                 @Arrowsboost.performed += instance.OnArrowsboost;
                 @Arrowsboost.canceled += instance.OnArrowsboost;
+                @Quit.started += instance.OnQuit;
+                @Quit.performed += instance.OnQuit;
+                @Quit.canceled += instance.OnQuit;
             }
         }
     }
@@ -880,8 +880,8 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         void OnArrowsMovement(InputAction.CallbackContext context);
         void OnArrowsPush(InputAction.CallbackContext context);
         void OnArrowsPull(InputAction.CallbackContext context);
-        void OnQuit(InputAction.CallbackContext context);
         void OnArrowsboost(InputAction.CallbackContext context);
+        void OnQuit(InputAction.CallbackContext context);
     }
     public interface IKlobyActions
     {

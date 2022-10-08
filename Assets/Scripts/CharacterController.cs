@@ -5,20 +5,27 @@ using UnityEngine.InputSystem;
 
 public class CharacterController : MonoBehaviour
 {
+    [Header("PLAYER OBJECT")]
     [SerializeField] private GameObject playerObject;
-    [SerializeField] private float speed = 3;
-    [SerializeField] private float sprintspeed = 4;
-    [SerializeField] private float rotationSpeed;
+
+    [Header("MOVEMENT")]
+    [SerializeField] private float walkingSpeed = 5;
+    [SerializeField] private float sprintSpeed = 10;
+    [SerializeField] private float rotationSpeed = 10000;
+
+    [Header("FORCE CONTROL")]
     [SerializeField] private float springConstant = 0;
     [SerializeField] private float ballMaxDistance = 3;
-    public bool flipRotation = false;
+    [SerializeField] private float pushForce = 100;
+    [SerializeField] private bool flipRotation = false;
+
     private InputAction movementAction;
     private float movespeed;
     private GameObject colliderChecker;
 
     public void SetInputAction(InputAction input, InputAction boost)
     {
-        movespeed = speed;
+        movespeed = walkingSpeed;
         movementAction = input;
 
         boost.performed += Boost;
@@ -32,14 +39,14 @@ public class CharacterController : MonoBehaviour
     {
         Vector3 scale = playerObject.transform.localScale;
         playerObject.transform.localScale = new Vector3(scale.x, scale.y * 6f / 7f, scale.z);
-        movespeed = sprintspeed;
+        movespeed = sprintSpeed;
     }
 
     void Unboost(InputAction.CallbackContext context)
     {
         Vector3 scale = playerObject.transform.localScale;
         playerObject.transform.localScale = new Vector3(scale.x, scale.y * 7f / 6f, scale.z);
-        movespeed = speed;
+        movespeed = walkingSpeed;
     }
 
     public void InitializeInput(InputAction pushAction, InputAction pullAction, GameObject collider)
@@ -63,7 +70,9 @@ public class CharacterController : MonoBehaviour
     {
         if (playerObject.GetComponent<PushBehavior>() != null) return;
         GameObject outObj = GameObject.Instantiate(colliderChecker);
-        outObj.AddComponent<PushColliderCheck>().callerObject = playerObject.gameObject;
+        var pcc = outObj.AddComponent<PushColliderCheck>();
+        pcc.callerObject = playerObject.gameObject;
+        pcc.pushForce = pushForce;
         outObj.transform.position = playerObject.transform.position + Quaternion.AngleAxis(-90, new Vector3(0, 0, 1)) * playerObject.transform.up.normalized;
     }
 
@@ -116,7 +125,7 @@ public class CharacterController : MonoBehaviour
             if (distance > ballMaxDistance)
             {
                 var rb = playerObject.GetComponent<Rigidbody2D>();
-                rb.AddForce(forceToBall);
+                rb.AddForce(springConstant * forceToBall);
             }
 
 

@@ -5,8 +5,10 @@ using UnityEngine;
 public class PushColliderCheck : MonoBehaviour
 {
     public GameObject callerObject = null;
+    public float pushForce = 100f;
     public void Start()
     {
+        Debug.Log("Created and: ", callerObject);
         StartCoroutine(StartDisappear());
     }
     private IEnumerator StartDisappear()
@@ -16,11 +18,12 @@ public class PushColliderCheck : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Something entered");
         if (collision.gameObject.tag == "Player" && collision.gameObject != callerObject)
         {
             Vector2 direction = collision.gameObject.transform.position - callerObject.transform.position;
             direction.Normalize();
-            collision.gameObject.AddComponent<PushBehavior>().Initialize(direction, 5f,1f);
+            collision.gameObject.AddComponent<PushBehavior>().Initialize(direction, pushForce, 1f);
         }
     }
 }

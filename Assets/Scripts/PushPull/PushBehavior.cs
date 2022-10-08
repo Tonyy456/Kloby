@@ -15,6 +15,17 @@ public class PushBehavior : MonoBehaviour
         this.time = time;
     }
 
+    private void Start()
+    {
+        var rb = GetComponent<Rigidbody2D>();
+        if(rb)
+        {
+            rb.AddForce(pushForce * pushScale);
+        }
+
+    }
+
+    /*
     void Update()
     {
         var behav = GetComponent<PullBehavior>();
@@ -24,4 +35,5 @@ public class PushBehavior : MonoBehaviour
         time = time - Time.deltaTime;
         this.transform.Translate(pushForce * pushScale * Time.deltaTime, Space.World);
     }
+    */
 }

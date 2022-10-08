@@ -69,18 +69,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Quit",
+                    "name": "Arrowsboost",
                     "type": "Button",
-                    "id": "9be27fb0-08f5-47de-be12-435ee9c5571c",
+                    "id": "c084eb47-31bf-4950-a3a8-ec30bab31d0e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Arrowsboost",
+                    "name": "Quit",
                     "type": "Button",
-                    "id": "c084eb47-31bf-4950-a3a8-ec30bab31d0e",
+                    "id": "9be27fb0-08f5-47de-be12-435ee9c5571c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -277,23 +277,23 @@
                 },
                 {
                     "name": "",
-                    "id": "8390cafb-5081-4ffd-942b-bb596ce8b235",
-                    "path": "<Keyboard>/shift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Arrowsboost",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "1fa8b27f-7ba3-4484-aa38-d6d0d7de34df",
                     "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "WASDboost",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8390cafb-5081-4ffd-942b-bb596ce8b235",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Arrowsboost",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
