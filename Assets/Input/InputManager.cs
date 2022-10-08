@@ -5,13 +5,12 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField] private GameObject bluePlayer;
-    [SerializeField] private GameObject redPlayer;
-    [SerializeField] private GameObject dotPrefab;
     [SerializeField] private GameObject PushColliderCheck;
     [SerializeField] private GameObject Rope;
+    [SerializeField] private CharacterController blue;
+    [SerializeField] private CharacterController red;
 
-/*    private PushPullHandler ppHandler;*/
+    /*    private PushPullHandler ppHandler;*/
     private GameInput gameInput;
     public void Start()
     {
@@ -34,40 +33,18 @@ public class InputManager : MonoBehaviour
         var actions = game.Kloby;
         actions.Quit.performed += QuitAction_performed;
         actions.Quit.Enable();
-        bluePlayer.GetComponent<MovementController>().SetInputAction(
+        blue.SetInputAction(
             actions.WASDMovement,
             actions.WASDboost);
-        bluePlayer.GetComponent<CharacterActionController>().InitializeInput(
+        blue.InitializeInput(
             actions.WASDPush,
             actions.WASDPull,
             PushColliderCheck);
 
-
-        redPlayer.GetComponent<MovementController>().SetInputAction(
+        red.SetInputAction(
             actions.ArrowsMovement,
             actions.Arrowsboost);
-        redPlayer.GetComponent<CharacterActionController>().InitializeInput(
-            actions.ArrowsPush,
-            actions.ArrowsPull,
-            PushColliderCheck);
-    }
-
-    private void InitializeMacos(GameInput game)
-    {
-        var actions = game.KlobyMacOS;
-        bluePlayer.GetComponent<MovementController>().SetInputAction(
-            actions.WASDMovement,
-            actions.WASDboost);
-        bluePlayer.GetComponent<CharacterActionController>().InitializeInput(
-            actions.WASDPush,
-            actions.WASDPull,
-            PushColliderCheck);
-
-
-        redPlayer.GetComponent<MovementController>().SetInputAction(
-            actions.ArrowsMovement,
-            actions.Arrowsboost);
-        redPlayer.GetComponent<CharacterActionController>().InitializeInput(
+        red.InitializeInput(
             actions.ArrowsPush,
             actions.ArrowsPull,
             PushColliderCheck);

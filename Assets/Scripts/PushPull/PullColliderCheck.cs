@@ -5,6 +5,7 @@ using UnityEngine;
 public class PullColliderCheck : MonoBehaviour
 {
     public GameObject callerObject = null;
+    public bool flip = false;
     public void Start()
     {
         StartCoroutine(StartDisappear());
@@ -18,7 +19,9 @@ public class PullColliderCheck : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ball" && callerObject.GetComponent<PullBehavior>() == null)
         {
-            callerObject.gameObject.AddComponent<PullBehavior>().pullObject = collision.gameObject;
+            var comp = callerObject.gameObject.AddComponent<PullBehavior>();
+            comp.pullObject = collision.gameObject;
+            comp.flip = flip;
         }
     }
 }

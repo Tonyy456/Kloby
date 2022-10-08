@@ -5,6 +5,7 @@ using UnityEngine;
 public class PullBehavior : MonoBehaviour
 {
     public GameObject pullObject;
+    public bool flip;
     private const float rotationSpeed = 1000f;
     [SerializeField] private float scaleY = 0.08f;
     [SerializeField] private float scaleX = 1f;
@@ -23,7 +24,6 @@ public class PullBehavior : MonoBehaviour
 
     public void Update()
     {
-        bool flip = GetComponent<MovementController>().flipRotation;
         Vector3 forward = Vector3.forward;
         if (flip) forward = -forward;
 
@@ -33,9 +33,7 @@ public class PullBehavior : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
 
         //Rotate ball in direction of player pulling
-        Debug.Log("Rotation before: " + pullObject.transform.rotation);
         pullObject.transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation,0.01f);
-
 
         //Keep ball a certain distance away
         if (direction.magnitude > 1.5)
