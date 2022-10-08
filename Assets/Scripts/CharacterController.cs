@@ -7,6 +7,14 @@ public class CharacterController : MonoBehaviour
 {
     [Header("PLAYER OBJECT")]
     [SerializeField] private GameObject playerObject;
+    public PullBehavior PullBehavior {
+        get
+        {
+            Debug.Log(playerObject.name);
+            return playerObject.transform.gameObject.GetComponent<PullBehavior>();
+        }
+    }
+
 
     [Header("MOVEMENT")]
     [SerializeField] private float walkingSpeed = 5;

@@ -24,8 +24,8 @@ public class ResetHandler : MonoBehaviour
     {
         foreach(var charCon in charReset)
         {
-            Destroy(charCon.GetComponent<PullBehavior>());
-            Destroy(charCon.GetComponent<PullBehavior>());
+            Debug.Log("Destroying: ", charCon.PullBehavior);
+            Destroy(charCon.PullBehavior);
         }
         for (int i = 0; i < posReset.Count; i++)
         {

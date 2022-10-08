@@ -13,7 +13,7 @@ public class PushColliderCheck : MonoBehaviour
     }
     private IEnumerator StartDisappear()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.01f);
         Destroy(this.gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)

@@ -2008,9 +2008,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a751d0402b6cec4cbbb2eb9f3004797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toreset:
+  charReset:
   - {fileID: 441851476}
   - {fileID: 1159269492}
+  posReset:
+  - {fileID: 2045429765}
+  - {fileID: 2013367264}
+  - {fileID: 513664304}
 --- !u!4 &1359341745
 Transform:
   m_ObjectHideFlags: 0
@@ -2832,6 +2836,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.507143, y: 5.4055076}
   m_EdgeRadius: 0
+--- !u!1 &2045429765 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8608812730086123349, guid: 9ff4102c96ce94fed9bf911b4fd7f0c7, type: 3}
+  m_PrefabInstance: {fileID: 8608812731271942863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2121463948
 GameObject:
   m_ObjectHideFlags: 0
