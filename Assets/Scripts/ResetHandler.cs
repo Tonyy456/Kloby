@@ -4,33 +4,34 @@ using UnityEngine;
 
 public class ResetHandler : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> toreset;
+    [SerializeField] private List<CharacterController> charReset;
+    [SerializeField] private List<GameObject> posReset;
 
-    private List<Vector3> positions = new List<Vector3>();
-    private List<Quaternion> rotations = new List<Quaternion>();
+    private List<Vector3> startPositions = new List<Vector3>();
+    private List<Quaternion> startRotations = new List<Quaternion>();
     public void Start()
     {
-        for (int i = 0; i < toreset.Count; i++)
+        for (int i = 0; i < posReset.Count; i++)
         {
-            var item = toreset[i];
-            positions.Add(item.transform.position);
-            rotations.Add(item.transform.rotation);
+            var item = posReset[i];
+            startPositions.Add(item.transform.position);
+            startRotations.Add(item.transform.rotation);
         }
 
     }
 
     public void Reset()
     {
-        foreach(var item in toreset)
+        foreach(var charCon in charReset)
         {
-            Destroy(item.GetComponent<PushBehavior>());
-            Destroy(item.GetComponent<PullBehavior>());
+            Destroy(charCon.GetComponent<PullBehavior>());
+            Destroy(charCon.GetComponent<PullBehavior>());
         }
-        for (int i = 0; i < toreset.Count; i++)
+        for (int i = 0; i < posReset.Count; i++)
         {
-            var item = toreset[i];
-            item.transform.position = positions[i];
-            item.transform.rotation = rotations[i];
+            var item = posReset[i];
+            item.transform.position = startPositions[i];
+            item.transform.rotation = startRotations[i];
         }
     }
 }
