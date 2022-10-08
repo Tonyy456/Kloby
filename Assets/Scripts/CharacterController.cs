@@ -9,6 +9,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private float speed = 3;
     [SerializeField] private float sprintspeed = 4;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private float springConstant = 0;
+    [SerializeField] private float ballMaxDistance = 3;
     public bool flipRotation = false;
     private InputAction movementAction;
     private float movespeed;
@@ -88,6 +90,7 @@ public class CharacterController : MonoBehaviour
     {
         if (!Game.GameRunning) return;
         Vector2 speedVector = movementAction.ReadValue<Vector2>();
+        Vector2 dPosition = speedVector * movespeed * Time.deltaTime;
 
         //Rotate player in direction of speed vector
         if (playerObject.GetComponent<PullBehavior>() == null && speedVector != Vector2.zero)
@@ -100,19 +103,28 @@ public class CharacterController : MonoBehaviour
 
         //make sure player cant move too far from rope
         var pb = playerObject.GetComponent<PullBehavior>();
-        bool moveAllowed = true;
         if (pb != null)
         {
-            var cpos = playerObject.transform.position;
-            Vector2 target = new Vector2(cpos.x, cpos.y) + speedVector * speed * Time.deltaTime;
-            var newPos = Vector3.MoveTowards(playerObject.transform.position, target, 22f);
-            var newDistance = (newPos - pb.pullObject.transform.position).magnitude;
-            if (newDistance > 3)
-                moveAllowed = false;
-        }
+            var playerPos = playerObject.transform.position;
+            Vector2 target = new Vector2(playerPos.x, playerPos.y) + dPosition;
+            Vector2 forceToBall = -1 * target.normalized;
 
-        if (moveAllowed)
-            playerObject.transform.Translate(speedVector * movespeed * Time.deltaTime, Space.World);
+            //calculate
+            var newPosition = Vector3.MoveTowards(playerObject.transform.position, target, 1000f);
+            var distance = (newPosition - pb.pullObject.transform.position).magnitude;
+
+            if (distance > ballMaxDistance)
+            {
+                var rb = playerObject.GetComponent<Rigidbody2D>();
+                rb.AddForce(forceToBall);
+            }
+
+
+        }
+            playerObject.transform.Translate(dPosition, Space.World);
     }
 
 }
+
+//HELLO I AM THE SPPOKY GHOST OF CHRISTMAS EVE. YOU MUST GIVE ME FOOD TO LIVE
+//--TAYLOR 
