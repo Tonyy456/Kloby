@@ -19,9 +19,16 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private float pushForce = 100;
     [SerializeField] private bool flipRotation = false;
 
+    [Header("MAX HOLD/SPRINT TIMERS")]
+    [SerializeField] private float maxSprintTime = 100;
+    [SerializeField] private float currSprintTime = 0;
+    [SerializeField] private float maxPullTime = 100;
+    [SerializeField] private float currPullTime = 0;
+
     private InputAction movementAction;
     private float movespeed;
     private GameObject colliderChecker;
+    private bool isBoosting;
 
     public void SetInputAction(InputAction input, InputAction boost)
     {
@@ -38,6 +45,7 @@ public class CharacterController : MonoBehaviour
     void Boost(InputAction.CallbackContext context)
     {
         Vector3 scale = playerObject.transform.localScale;
+        isBoosting = true;
         playerObject.transform.localScale = new Vector3(scale.x, scale.y * 6f / 7f, scale.z);
         movespeed = sprintSpeed;
     }
@@ -47,6 +55,7 @@ public class CharacterController : MonoBehaviour
         Vector3 scale = playerObject.transform.localScale;
         playerObject.transform.localScale = new Vector3(scale.x, scale.y * 7f / 6f, scale.z);
         movespeed = walkingSpeed;
+        isBoosting = false;
     }
 
     public void InitializeInput(InputAction pushAction, InputAction pullAction, GameObject collider)
@@ -69,7 +78,7 @@ public class CharacterController : MonoBehaviour
     private void Push(InputAction.CallbackContext context)
     {
         if (playerObject.GetComponent<PushBehavior>() != null) return;
-        GameObject outObj = GameObject.Instantiate(colliderChecker);
+        GameObject outObj = Instantiate(colliderChecker);
         var pcc = outObj.AddComponent<PushColliderCheck>();
         pcc.callerObject = playerObject.gameObject;
         pcc.pushForce = pushForce;
@@ -84,7 +93,7 @@ public class CharacterController : MonoBehaviour
             Destroy(component);
             return;
         }
-        GameObject outObj = GameObject.Instantiate(colliderChecker);
+        GameObject outObj = Instantiate(colliderChecker);
         if (outObj.GetComponent<PullColliderCheck>() == null)
         {
             var comp = outObj.AddComponent<PullColliderCheck>();
@@ -101,6 +110,17 @@ public class CharacterController : MonoBehaviour
         Vector2 speedVector = movementAction.ReadValue<Vector2>();
         Vector2 dPosition = speedVector * movespeed * Time.deltaTime;
 
+        //Limit the amount of time you can sprint
+        if (!isBoosting) {
+            if (currSprintTime > 0)
+                currSprintTime -= Time.deltaTime;
+        } else {
+            if (currSprintTime < maxSprintTime)
+                currSprintTime += Time.deltaTime;
+            else
+                movespeed = walkingSpeed;
+        }
+
         //Rotate player in direction of speed vector
         if (playerObject.GetComponent<PullBehavior>() == null && speedVector != Vector2.zero)
         {
@@ -114,25 +134,29 @@ public class CharacterController : MonoBehaviour
         var pb = playerObject.GetComponent<PullBehavior>();
         if (pb != null)
         {
-            var playerPos = playerObject.transform.position;
-            Vector2 target = new Vector2(playerPos.x, playerPos.y) + dPosition;
-            Vector2 forceToBall = -1 * target.normalized;
+            if (currPullTime < maxPullTime) {
+                var playerPos = playerObject.transform.position;
+                Vector2 target = new Vector2(playerPos.x, playerPos.y) + dPosition;
+                Vector2 forceToBall = -1 * target.normalized;
 
-            //calculate
-            var newPosition = Vector3.MoveTowards(playerObject.transform.position, target, 1000f);
-            var distance = (newPosition - pb.pullObject.transform.position).magnitude;
+                //calculate
+                var newPosition = Vector3.MoveTowards(playerObject.transform.position, target, 1000f);
+                var distance = (newPosition - pb.pullObject.transform.position).magnitude;
 
-            if (distance > ballMaxDistance)
-            {
-                var rb = playerObject.GetComponent<Rigidbody2D>();
-                rb.AddForce(springConstant * forceToBall);
+                if (distance > ballMaxDistance) {
+                    var rb = playerObject.GetComponent<Rigidbody2D>();
+                    rb.AddForce(springConstant * forceToBall);
+                }
+                currPullTime += Time.deltaTime;
+            } else {
+                Destroy(pb);
             }
-
-
+        } else {
+            if (currPullTime > 0)
+                currPullTime -= Time.deltaTime;
         }
         playerObject.transform.Translate(dPosition, Space.World);
     }
-
 }
 
 //HELLO I AM THE SPPOKY GHOST OF CHRISTMAS EVE. YOU MUST GIVE ME FOOD TO LIVE
