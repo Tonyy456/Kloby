@@ -33,7 +33,12 @@ public class Player : ScriptableObject
 
     public float HoldTime
     {
-        get => strength;
+        get => strength / 4;
+    }
+
+    public float SprintTime
+    {
+        get => walkSpeed;
     }
 
     public float WalkSpeed

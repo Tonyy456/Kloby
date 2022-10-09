@@ -15,5 +15,5 @@ MonoBehaviour:
   playerSprite: {fileID: 1088120707, guid: f489d93c3c8124290985093eecd3e95b, type: 3}
   speed: 5
   strength: 50
-  walkSpeed: 1
+  walkSpeed: 3
   accentColor: {r: 0.106215455, g: 0.8207547, b: 0, a: 1}

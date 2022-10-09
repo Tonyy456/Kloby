@@ -24,6 +24,10 @@ public class StartMenuOptions : MonoBehaviour
     [SerializeField] private Image LeftSpeedImage;
     [SerializeField] private Image RightSpeedImage;
 
+    [Header("TEAMNAMES")]
+    [SerializeField] private TMPro.TMP_Text text1;
+    [SerializeField] private TMPro.TMP_Text text2;
+
     private float maxSpeed = 0;
     private float maxStrength = 0;
 
@@ -50,6 +54,12 @@ public class StartMenuOptions : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("KlobyScene");
+    }
+
+    public void SetNames()
+    {
+        Game.bluePlayer = text1.text;
+        Game.redPlayer = text2.text;
     }
     public void PlayerUpB()
     {

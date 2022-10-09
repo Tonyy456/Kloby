@@ -17,12 +17,12 @@ public class PushColliderCheck : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Something entered");
         if (collision.gameObject.tag == "Player" && collision.gameObject != callerObject)
         {
             Vector2 direction = collision.gameObject.transform.position - callerObject.transform.position;
             direction.Normalize();
-            collision.gameObject.AddComponent<PushBehavior>().Initialize(direction, pushForce, 1f);
+            if(collision.gameObject.GetComponent<PushBehavior>() == null)
+                collision.gameObject.AddComponent<PushBehavior>().Initialize(direction, pushForce, 1f);
             Destroy(this.gameObject);
         }
     }

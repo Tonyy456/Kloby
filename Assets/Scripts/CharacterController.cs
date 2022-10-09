@@ -199,5 +199,3 @@ public class CharacterController : MonoBehaviour
     }
 }
 
-//HELLO I AM THE SPPOKY GHOST OF CHRISTMAS EVE. YOU MUST GIVE ME FOOD TO LIVE
-//--TAYLOR 

@@ -20,16 +20,6 @@ public class InputManager : MonoBehaviour
         this.gameInput = game;
     }
 
-    public void JoinP1()
-    {
-
-    }
-
-    public void JoinP2()
-    {
-
-    }
-
     private void QuitAction_performed(InputAction.CallbackContext obj)
     {
 #if UNITY_EDITOR
@@ -40,25 +30,24 @@ public class InputManager : MonoBehaviour
 
     private void InitializeWindows(GameInput game)
     {
-        var actions = game.Kloby;
-        actions.Quit.performed += QuitAction_performed;
-        actions.Quit.Enable();
-        
+
+        /*
         blue.SetInputAction(
-            actions.WASDMovement,
-            actions.WASDboost);
+            player1.Move,
+            player1.Boost);
         blue.InitializeInput(
-            actions.WASDPush,
-            actions.WASDPull,
+            player1.Push,
+            player1.Pull,
             PushColliderCheck);
 
         red.SetInputAction(
-            actions.ArrowsMovement,
-            actions.Arrowsboost);
+            player2.Move,
+            player2.Boost);
         red.InitializeInput(
-            actions.ArrowsPush,
-            actions.ArrowsPull,
+            player2.Push,
+            player2.Pull,
             PushColliderCheck);
+        */
     }
 
     public void Update()

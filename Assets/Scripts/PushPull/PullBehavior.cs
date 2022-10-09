@@ -16,6 +16,8 @@ public class PullBehavior : MonoBehaviour
     {
         rope = Instantiate(Game.ropeObject);
         rope.GetComponent<SpriteRenderer>().sortingOrder = 100;
+        Debug.Log(this.name);
+        Debug.Log(pullObject.name);
     }
 
     public void OnDisable()
@@ -29,7 +31,7 @@ public class PullBehavior : MonoBehaviour
         if (flip) forward = -forward;
 
         //Rotate player in direction of the ball
-        Vector3 direction = pullObject.transform.position - this.transform.position;
+        Vector2 direction = pullObject.transform.position - this.transform.position;
         Quaternion toRotation = Quaternion.LookRotation(forward, Quaternion.Euler(0, 0, 90) * direction);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
 
@@ -45,7 +47,7 @@ public class PullBehavior : MonoBehaviour
         }
 
         // update rope
-        rope.transform.position = this.transform.position + direction / 2;
+        rope.transform.position = this.transform.position + (Vector3)(direction / 2);
         rope.transform.localScale = new Vector3(direction.magnitude * scaleX, scaleY, 0);
         rope.transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, 0.001f * Time.deltaTime);
     }

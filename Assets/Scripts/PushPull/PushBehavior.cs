@@ -22,18 +22,6 @@ public class PushBehavior : MonoBehaviour
         {
             rb.AddForce(pushForce * pushScale);
         }
-
+        Destroy(this);
     }
-
-    /*
-    void Update()
-    {
-        var behav = GetComponent<PullBehavior>();
-        if (behav != null) Destroy(behav);
-        if (time <= 0)
-            Destroy(this);
-        time = time - Time.deltaTime;
-        this.transform.Translate(pushForce * pushScale * Time.deltaTime, Space.World);
-    }
-    */
 }

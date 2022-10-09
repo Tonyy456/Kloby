@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ResetHandler : MonoBehaviour
 {
-    [SerializeField] private List<CharacterController> charReset;
+    [SerializeField] private List<NCC> charReset;
     [SerializeField] private List<GameObject> posReset;
 
     private List<Vector3> startPositions = new List<Vector3>();
@@ -19,10 +19,6 @@ public class ResetHandler : MonoBehaviour
         }
 
     }
-    public void DoDebug()
-    {
-        Debug.Log("Debugging!");
-    }
 
     public void Reset()
     {
@@ -35,7 +31,10 @@ public class ResetHandler : MonoBehaviour
             var item = posReset[i];
             var rb = item.GetComponent<Rigidbody2D>();
             if (rb)
+            {
+                rb.angularVelocity = 0f;
                 rb.velocity = Vector2.zero;
+            }
             item.transform.position = startPositions[i];
             item.transform.rotation = startRotations[i];
         }

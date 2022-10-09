@@ -24,7 +24,6 @@ public class PullColliderCheck : MonoBehaviour
             comp.pullObject = collision.gameObject;
             comp.flip = flip;
             comp.maxDistance = maxDistance;
-            Debug.Log(callerObject.name);
             Object.Destroy(this.gameObject);
         }
     }

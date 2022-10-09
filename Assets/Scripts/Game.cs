@@ -21,6 +21,26 @@ public class Game
     public static Player rightPlayer = Resources.Load("Players/GreenPlayer") as Player;
     public static GameObject ropeObject;
 
+    public static float leftStrength = 1f;
+    public static float leftSpeed = 1f;
+    public static float rightStrength = 1f;
+    public static float rightSpeed = 1f;
+
+    public static GameObject playerParent;
+
+    public static int keyboardType = 0;
+    public static int Keyboard
+    {
+        get
+        {
+            return keyboardType;
+        }
+        set
+        {
+            keyboardType = value;
+        }
+    }
+
     public static void GameEnded()
     {
         OnGameOver();

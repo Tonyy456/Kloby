@@ -24,405 +24,392 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
     ""name"": ""GameInput"",
     ""maps"": [
         {
-            ""name"": ""Kloby"",
-            ""id"": ""c41b7f69-6222-4fec-ae81-19862e689323"",
+            ""name"": ""1Keyboard"",
+            ""id"": ""3ebafe5f-9e5f-4b5a-a72b-68727832ad06"",
             ""actions"": [
                 {
-                    ""name"": ""WASDMovement"",
+                    ""name"": ""Move"",
                     ""type"": ""Value"",
-                    ""id"": ""e3381597-5343-44df-bbc8-56c254618bf1"",
+                    ""id"": ""63fb1167-d37f-4fce-b417-7519c78e0451"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""WASDPull"",
+                    ""name"": ""Pull"",
                     ""type"": ""Button"",
-                    ""id"": ""c64445e2-e157-4748-9d4e-5ad157d7c5a0"",
+                    ""id"": ""b8d2755f-c038-4fa7-9fde-5d3988de21db"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""WASDPush"",
+                    ""name"": ""Push"",
                     ""type"": ""Button"",
-                    ""id"": ""97ec9098-7220-4063-9ca3-b0080814a377"",
+                    ""id"": ""72f807be-4c2f-4e2e-ae60-87ea80897d0c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""WASDboost"",
+                    ""name"": ""Boost"",
                     ""type"": ""Button"",
-                    ""id"": ""558a0407-3d90-4d66-9c29-7d42f0659e39"",
+                    ""id"": ""e95cea04-26a1-4223-8430-7f7bd5a70ef9"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""ArrowsMovement"",
-                    ""type"": ""Value"",
-                    ""id"": ""8eab9825-6b18-4fc7-a5ab-9cd8c190865f"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""ArrowsPush"",
-                    ""type"": ""Button"",
-                    ""id"": ""d1ecc0ea-de95-41fe-a3de-456e006c91d6"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""ArrowsPull"",
-                    ""type"": ""Button"",
-                    ""id"": ""950ac2b5-ed68-4b52-b617-22922fc5f288"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Arrowsboost"",
-                    ""type"": ""Button"",
-                    ""id"": ""b800577a-2b5d-40b3-bcc1-740661777dfe"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Quit"",
-                    ""type"": ""Button"",
-                    ""id"": ""324b2bdb-997b-4f62-b034-ccf301c9b55a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": ""2D Vector"",
-                    ""id"": ""d1c09bfd-8e50-447f-89d4-34d3b6bf351f"",
+                    ""id"": ""617db0b3-dcbb-4101-9724-dd5bf32060fa"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""WASDMovement"",
+                    ""action"": ""Move"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""54a0fa01-a626-4a9f-9cf7-1ff2a47b53eb"",
+                    ""id"": ""83fbf7a4-f3ff-4770-86c4-340adcd3ffb6"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""WASDMovement"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""c7fc4f47-e0e8-482d-a429-0641e99aee16"",
+                    ""id"": ""4f6df294-4433-4fc6-bc2d-84f1762b4b7f"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""WASDMovement"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""e6bb4986-b9be-413a-a3da-9ebafeeefafa"",
+                    ""id"": ""5bc6fd4c-a946-4908-ade4-beedf73fd08a"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""WASDMovement"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""ed5c5f52-48a8-41d0-a77f-eff868c02926"",
+                    ""id"": ""f2ee28df-f6d4-457a-96d1-89ce3babb41f"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""WASDMovement"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3dc110b6-200e-4212-8c40-7201631021c4"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""WASDMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d289dfbe-db4a-4de0-8fb5-d3243d7f5d5c"",
+                    ""id"": ""549c3584-2116-4c17-8e87-acdede421f22"",
                     ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""WASDPush"",
+                    ""action"": ""Push"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e9200ed9-e316-4825-862d-535c3af7896c"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""WASDPush"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b48b4916-f4f2-4f95-a6ed-99c27ef8b50c"",
-                    ""path"": ""<Keyboard>/numpad0"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ArrowsPush"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""bf15c7da-909f-4c91-bc4e-195726debe55"",
-                    ""path"": ""<Keyboard>/numpadPeriod"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ArrowsPull"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fcab6a1f-076d-4719-ab13-605aa3c2b0c2"",
+                    ""id"": ""b08935fd-77fe-4c46-99d1-ea331e1afa54"",
                     ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""WASDPull"",
+                    ""action"": ""Pull"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ff5d5139-70e9-47c0-9bec-2b10b354d3ef"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""WASDPull"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""a6890d61-4f78-40ca-9aa8-25bda8c4fa13"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ArrowsMovement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""02dd2c3a-c250-4630-844c-cf05b0ed5283"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ArrowsMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""96638af6-90b8-48c9-8589-5a1d2d260b64"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ArrowsMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""ca9f3703-a360-411f-9727-482ad9eb28a3"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ArrowsMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""3df4d21f-cac1-4b46-b995-9a3192d5135b"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ArrowsMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e5741059-e6c1-4bda-8ced-906903fde8ba"",
-                    ""path"": ""<Keyboard>/numpadEnter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Arrowsboost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b2a692c2-646d-4ab2-9c8c-cb6eca4988d6"",
+                    ""id"": ""3cd317e0-f1e5-429e-888f-2b7853bdfe52"",
                     ""path"": ""<Keyboard>/l"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""WASDboost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4b9bdff0-f99e-4c3f-bb75-03f785bb4b1b"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""WASDboost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b6c8a5f1-afcd-44c3-8026-643fc00d8fad"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Quit"",
+                    ""action"": ""Boost"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
             ]
         },
         {
-            ""name"": ""Kloby1"",
-            ""id"": ""60b674d0-1ddd-4bcd-875c-d5976e130026"",
+            ""name"": ""2Keyboard"",
+            ""id"": ""74c5c082-e696-4386-b123-cc0c4cf50b28"",
             ""actions"": [
                 {
-                    ""name"": ""WASDMovement"",
+                    ""name"": ""Move"",
                     ""type"": ""Value"",
-                    ""id"": ""233eae3c-7084-4300-b97c-5391281f9d66"",
+                    ""id"": ""76ce9a8e-76c4-41b7-9211-0bd708023d36"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""WASDPull"",
+                    ""name"": ""Pull"",
                     ""type"": ""Button"",
-                    ""id"": ""cb6d6ddb-20a5-424f-9bb8-a90df8d5ccb7"",
+                    ""id"": ""cde5be18-9a5d-4850-9e0b-0a430197c325"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""WASDPush"",
+                    ""name"": ""Push"",
                     ""type"": ""Button"",
-                    ""id"": ""fd758a8b-ddf0-4a3d-9cf3-65e071e07a8a"",
+                    ""id"": ""faef47b9-ffd2-4022-ae1a-82043c396484"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""WASDboost"",
+                    ""name"": ""Boost"",
                     ""type"": ""Button"",
-                    ""id"": ""8ce736f4-1d89-4a02-a60e-6d9ec5e73637"",
+                    ""id"": ""0234f1b6-8a47-4bf8-af8a-9de4c40a505c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""4bfac199-312f-4f49-8fae-bfed87a9b78d"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""ArrowsMovement"",
+                    ""name"": ""up"",
+                    ""id"": ""85534182-21a3-4548-9e05-66c57387027c"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""94890554-f2d6-4eb4-8b1c-7c70cc3e2d4c"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""d0e23cc1-2ff1-4955-9b01-33859cf06f6b"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""53642d57-30c9-4170-b0f0-05fde5b6c78e"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3012355-c1b3-4098-8d9b-5461ceab3469"",
+                    ""path"": ""<Keyboard>/numpad0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Push"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a5c535c4-3ee2-4cbc-ba00-0e3cdc3ac8db"",
+                    ""path"": ""<Keyboard>/numpadPeriod"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pull"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""95b918b7-23b0-4512-905d-bc24d1d0e086"",
+                    ""path"": ""<Keyboard>/numpadEnter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Boost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""1Controller"",
+            ""id"": ""803be2a7-909b-4d52-98da-6d8e4f664cd5"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
                     ""type"": ""Value"",
-                    ""id"": ""4b6b8ece-147b-4c18-a3da-2ae0c5a08f11"",
+                    ""id"": ""1ec4f5d4-63b6-4f8e-adf6-56f32ff9af95"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""ArrowsPush"",
+                    ""name"": ""Pull"",
                     ""type"": ""Button"",
-                    ""id"": ""d27e9f0a-e1dd-417d-b106-2ad6e017f48d"",
+                    ""id"": ""5d3614ed-4d55-4785-a2e4-7f5299d2a63c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ArrowsPull"",
+                    ""name"": ""Push"",
                     ""type"": ""Button"",
-                    ""id"": ""60c8b373-1242-48e1-8ffc-923aa65fdb13"",
+                    ""id"": ""2d03b338-0353-459e-bf83-0a4219b1fc00"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Arrowsboost"",
+                    ""name"": ""Boost"",
                     ""type"": ""Button"",
-                    ""id"": ""03189774-57e1-4bc5-8c21-0f4be3a695ae"",
+                    ""id"": ""7e9e48f4-cf8c-44f2-ad7c-1ab6833ae93e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold"",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""6af53bd1-ca0d-41ae-9a0c-c957e657e71d"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""57c99a9d-19cd-41d7-97a7-044b40e4f5bd"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Push"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5f83efa4-afe6-44d7-8052-77a43be7bb72"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pull"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a0cc63f-d496-4fcf-829b-ecfb97ecefe4"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Boost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""2Controller"",
+            ""id"": ""5af731ba-c697-47e4-9ec8-7c7a230cde4d"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""5bb0dc0c-c0d2-4835-890f-a7f61ec610aa"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pull"",
+                    ""type"": ""Button"",
+                    ""id"": ""d65f1a16-309f-40bc-b22f-e9210b4dd5bc"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Quit"",
+                    ""name"": ""Push"",
                     ""type"": ""Button"",
-                    ""id"": ""9779289d-4f91-4eb3-a66a-7404b56952ad"",
+                    ""id"": ""7a751fa8-37d3-4c21-82da-2c7d930b13da"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Boost"",
+                    ""type"": ""Button"",
+                    ""id"": ""1e01fa0d-ab67-4ae5-9edd-c0d3359acea9"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -431,263 +418,100 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""2d421564-8897-4f15-8b79-da4e317cbe81"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""WASDMovement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""eaa573af-0994-4081-8d93-26b745bf4c95"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""WASDMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""6e66bb17-da0e-4a35-8bd8-d3a82e31cc11"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""WASDMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""e2293c76-0016-4194-b13a-c089d73461aa"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""WASDMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""2087bed2-a15a-4df0-8c5d-10a86b7f5743"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""WASDMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": """",
-                    ""id"": ""69a53368-6271-48ba-a0e0-9b3fca7346a4"",
+                    ""id"": ""cd12dc1e-e40d-443c-ad72-d0444f134b4d"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""WASDMovement"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ba311074-8a75-4f3c-9e30-7775c119e7be"",
-                    ""path"": ""<Keyboard>/j"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""WASDPush"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""375c833b-c159-4a1d-a22e-473fbe9c19da"",
+                    ""id"": ""a17b5cc2-2d30-4e64-a436-8b07d24e8d28"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""WASDPush"",
+                    ""action"": ""Push"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0028c6ef-e565-4fd9-af06-72d1da9d6459"",
-                    ""path"": ""<Keyboard>/numpad0"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ArrowsPush"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9e17d3e7-964f-4e08-820b-ea8e8c1a1aff"",
-                    ""path"": ""<Keyboard>/numpadPeriod"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ArrowsPull"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""74779100-d698-4f3c-b371-c0358a188642"",
-                    ""path"": ""<Keyboard>/k"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""WASDPull"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8aa1aacb-f56b-4b35-bf46-1c68ecc9c653"",
+                    ""id"": ""2824774b-7600-47cd-89b6-337c759c879e"",
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""WASDPull"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""f18a5358-1e8c-42b0-a2c1-9435d07aec66"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ArrowsMovement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""7f9a3c24-e93d-4be7-bcf1-180da2e1e61b"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ArrowsMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""a6c18d40-563a-42c6-a2ca-bff846471f7f"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ArrowsMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""d2e46281-1042-4781-ad13-f9844ae1e3ac"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ArrowsMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""103f2497-6b46-4e87-af68-93b09c22550d"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ArrowsMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""05ea1266-fd2f-4d2f-af5f-51d5cced0ba0"",
-                    ""path"": ""<Keyboard>/numpadEnter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Arrowsboost"",
+                    ""action"": ""Pull"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8ac32034-ae2d-42d0-8af6-fd665ea1c66d"",
-                    ""path"": ""<Keyboard>/l"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""WASDboost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""06766e9b-0c34-446b-b71f-f7e28f7149c0"",
+                    ""id"": ""3875a214-896c-445e-977a-37dedae0ed8c"",
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""WASDboost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2bf6fbd2-53ea-4e07-8789-bcd8a8562386"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Quit"",
+                    ""action"": ""Boost"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""CC"",
+            ""bindingGroup"": ""CC"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""KC"",
+            ""bindingGroup"": ""KC"",
+            ""devices"": []
+        }
+    ]
 }");
-        // Kloby
-        m_Kloby = asset.FindActionMap("Kloby", throwIfNotFound: true);
-        m_Kloby_WASDMovement = m_Kloby.FindAction("WASDMovement", throwIfNotFound: true);
-        m_Kloby_WASDPull = m_Kloby.FindAction("WASDPull", throwIfNotFound: true);
-        m_Kloby_WASDPush = m_Kloby.FindAction("WASDPush", throwIfNotFound: true);
-        m_Kloby_WASDboost = m_Kloby.FindAction("WASDboost", throwIfNotFound: true);
-        m_Kloby_ArrowsMovement = m_Kloby.FindAction("ArrowsMovement", throwIfNotFound: true);
-        m_Kloby_ArrowsPush = m_Kloby.FindAction("ArrowsPush", throwIfNotFound: true);
-        m_Kloby_ArrowsPull = m_Kloby.FindAction("ArrowsPull", throwIfNotFound: true);
-        m_Kloby_Arrowsboost = m_Kloby.FindAction("Arrowsboost", throwIfNotFound: true);
-        m_Kloby_Quit = m_Kloby.FindAction("Quit", throwIfNotFound: true);
-        // Kloby1
-        m_Kloby1 = asset.FindActionMap("Kloby1", throwIfNotFound: true);
-        m_Kloby1_WASDMovement = m_Kloby1.FindAction("WASDMovement", throwIfNotFound: true);
-        m_Kloby1_WASDPull = m_Kloby1.FindAction("WASDPull", throwIfNotFound: true);
-        m_Kloby1_WASDPush = m_Kloby1.FindAction("WASDPush", throwIfNotFound: true);
-        m_Kloby1_WASDboost = m_Kloby1.FindAction("WASDboost", throwIfNotFound: true);
-        m_Kloby1_ArrowsMovement = m_Kloby1.FindAction("ArrowsMovement", throwIfNotFound: true);
-        m_Kloby1_ArrowsPush = m_Kloby1.FindAction("ArrowsPush", throwIfNotFound: true);
-        m_Kloby1_ArrowsPull = m_Kloby1.FindAction("ArrowsPull", throwIfNotFound: true);
-        m_Kloby1_Arrowsboost = m_Kloby1.FindAction("Arrowsboost", throwIfNotFound: true);
-        m_Kloby1_Quit = m_Kloby1.FindAction("Quit", throwIfNotFound: true);
+        // 1Keyboard
+        m__1Keyboard = asset.FindActionMap("1Keyboard", throwIfNotFound: true);
+        m__1Keyboard_Move = m__1Keyboard.FindAction("Move", throwIfNotFound: true);
+        m__1Keyboard_Pull = m__1Keyboard.FindAction("Pull", throwIfNotFound: true);
+        m__1Keyboard_Push = m__1Keyboard.FindAction("Push", throwIfNotFound: true);
+        m__1Keyboard_Boost = m__1Keyboard.FindAction("Boost", throwIfNotFound: true);
+        // 2Keyboard
+        m__2Keyboard = asset.FindActionMap("2Keyboard", throwIfNotFound: true);
+        m__2Keyboard_Move = m__2Keyboard.FindAction("Move", throwIfNotFound: true);
+        m__2Keyboard_Pull = m__2Keyboard.FindAction("Pull", throwIfNotFound: true);
+        m__2Keyboard_Push = m__2Keyboard.FindAction("Push", throwIfNotFound: true);
+        m__2Keyboard_Boost = m__2Keyboard.FindAction("Boost", throwIfNotFound: true);
+        // 1Controller
+        m__1Controller = asset.FindActionMap("1Controller", throwIfNotFound: true);
+        m__1Controller_Move = m__1Controller.FindAction("Move", throwIfNotFound: true);
+        m__1Controller_Pull = m__1Controller.FindAction("Pull", throwIfNotFound: true);
+        m__1Controller_Push = m__1Controller.FindAction("Push", throwIfNotFound: true);
+        m__1Controller_Boost = m__1Controller.FindAction("Boost", throwIfNotFound: true);
+        // 2Controller
+        m__2Controller = asset.FindActionMap("2Controller", throwIfNotFound: true);
+        m__2Controller_Move = m__2Controller.FindAction("Move", throwIfNotFound: true);
+        m__2Controller_Pull = m__2Controller.FindAction("Pull", throwIfNotFound: true);
+        m__2Controller_Push = m__2Controller.FindAction("Push", throwIfNotFound: true);
+        m__2Controller_Boost = m__2Controller.FindAction("Boost", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -744,221 +568,277 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Kloby
-    private readonly InputActionMap m_Kloby;
-    private IKlobyActions m_KlobyActionsCallbackInterface;
-    private readonly InputAction m_Kloby_WASDMovement;
-    private readonly InputAction m_Kloby_WASDPull;
-    private readonly InputAction m_Kloby_WASDPush;
-    private readonly InputAction m_Kloby_WASDboost;
-    private readonly InputAction m_Kloby_ArrowsMovement;
-    private readonly InputAction m_Kloby_ArrowsPush;
-    private readonly InputAction m_Kloby_ArrowsPull;
-    private readonly InputAction m_Kloby_Arrowsboost;
-    private readonly InputAction m_Kloby_Quit;
-    public struct KlobyActions
+    // 1Keyboard
+    private readonly InputActionMap m__1Keyboard;
+    private I_1KeyboardActions m__1KeyboardActionsCallbackInterface;
+    private readonly InputAction m__1Keyboard_Move;
+    private readonly InputAction m__1Keyboard_Pull;
+    private readonly InputAction m__1Keyboard_Push;
+    private readonly InputAction m__1Keyboard_Boost;
+    public struct _1KeyboardActions
     {
         private @GameInput m_Wrapper;
-        public KlobyActions(@GameInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @WASDMovement => m_Wrapper.m_Kloby_WASDMovement;
-        public InputAction @WASDPull => m_Wrapper.m_Kloby_WASDPull;
-        public InputAction @WASDPush => m_Wrapper.m_Kloby_WASDPush;
-        public InputAction @WASDboost => m_Wrapper.m_Kloby_WASDboost;
-        public InputAction @ArrowsMovement => m_Wrapper.m_Kloby_ArrowsMovement;
-        public InputAction @ArrowsPush => m_Wrapper.m_Kloby_ArrowsPush;
-        public InputAction @ArrowsPull => m_Wrapper.m_Kloby_ArrowsPull;
-        public InputAction @Arrowsboost => m_Wrapper.m_Kloby_Arrowsboost;
-        public InputAction @Quit => m_Wrapper.m_Kloby_Quit;
-        public InputActionMap Get() { return m_Wrapper.m_Kloby; }
+        public _1KeyboardActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m__1Keyboard_Move;
+        public InputAction @Pull => m_Wrapper.m__1Keyboard_Pull;
+        public InputAction @Push => m_Wrapper.m__1Keyboard_Push;
+        public InputAction @Boost => m_Wrapper.m__1Keyboard_Boost;
+        public InputActionMap Get() { return m_Wrapper.m__1Keyboard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(KlobyActions set) { return set.Get(); }
-        public void SetCallbacks(IKlobyActions instance)
+        public static implicit operator InputActionMap(_1KeyboardActions set) { return set.Get(); }
+        public void SetCallbacks(I_1KeyboardActions instance)
         {
-            if (m_Wrapper.m_KlobyActionsCallbackInterface != null)
+            if (m_Wrapper.m__1KeyboardActionsCallbackInterface != null)
             {
-                @WASDMovement.started -= m_Wrapper.m_KlobyActionsCallbackInterface.OnWASDMovement;
-                @WASDMovement.performed -= m_Wrapper.m_KlobyActionsCallbackInterface.OnWASDMovement;
-                @WASDMovement.canceled -= m_Wrapper.m_KlobyActionsCallbackInterface.OnWASDMovement;
-                @WASDPull.started -= m_Wrapper.m_KlobyActionsCallbackInterface.OnWASDPull;
-                @WASDPull.performed -= m_Wrapper.m_KlobyActionsCallbackInterface.OnWASDPull;
-                @WASDPull.canceled -= m_Wrapper.m_KlobyActionsCallbackInterface.OnWASDPull;
-                @WASDPush.started -= m_Wrapper.m_KlobyActionsCallbackInterface.OnWASDPush;
-                @WASDPush.performed -= m_Wrapper.m_KlobyActionsCallbackInterface.OnWASDPush;
-                @WASDPush.canceled -= m_Wrapper.m_KlobyActionsCallbackInterface.OnWASDPush;
-                @WASDboost.started -= m_Wrapper.m_KlobyActionsCallbackInterface.OnWASDboost;
-                @WASDboost.performed -= m_Wrapper.m_KlobyActionsCallbackInterface.OnWASDboost;
-                @WASDboost.canceled -= m_Wrapper.m_KlobyActionsCallbackInterface.OnWASDboost;
-                @ArrowsMovement.started -= m_Wrapper.m_KlobyActionsCallbackInterface.OnArrowsMovement;
-                @ArrowsMovement.performed -= m_Wrapper.m_KlobyActionsCallbackInterface.OnArrowsMovement;
-                @ArrowsMovement.canceled -= m_Wrapper.m_KlobyActionsCallbackInterface.OnArrowsMovement;
-                @ArrowsPush.started -= m_Wrapper.m_KlobyActionsCallbackInterface.OnArrowsPush;
-                @ArrowsPush.performed -= m_Wrapper.m_KlobyActionsCallbackInterface.OnArrowsPush;
-                @ArrowsPush.canceled -= m_Wrapper.m_KlobyActionsCallbackInterface.OnArrowsPush;
-                @ArrowsPull.started -= m_Wrapper.m_KlobyActionsCallbackInterface.OnArrowsPull;
-                @ArrowsPull.performed -= m_Wrapper.m_KlobyActionsCallbackInterface.OnArrowsPull;
-                @ArrowsPull.canceled -= m_Wrapper.m_KlobyActionsCallbackInterface.OnArrowsPull;
-                @Arrowsboost.started -= m_Wrapper.m_KlobyActionsCallbackInterface.OnArrowsboost;
-                @Arrowsboost.performed -= m_Wrapper.m_KlobyActionsCallbackInterface.OnArrowsboost;
-                @Arrowsboost.canceled -= m_Wrapper.m_KlobyActionsCallbackInterface.OnArrowsboost;
-                @Quit.started -= m_Wrapper.m_KlobyActionsCallbackInterface.OnQuit;
-                @Quit.performed -= m_Wrapper.m_KlobyActionsCallbackInterface.OnQuit;
-                @Quit.canceled -= m_Wrapper.m_KlobyActionsCallbackInterface.OnQuit;
+                @Move.started -= m_Wrapper.m__1KeyboardActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m__1KeyboardActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m__1KeyboardActionsCallbackInterface.OnMove;
+                @Pull.started -= m_Wrapper.m__1KeyboardActionsCallbackInterface.OnPull;
+                @Pull.performed -= m_Wrapper.m__1KeyboardActionsCallbackInterface.OnPull;
+                @Pull.canceled -= m_Wrapper.m__1KeyboardActionsCallbackInterface.OnPull;
+                @Push.started -= m_Wrapper.m__1KeyboardActionsCallbackInterface.OnPush;
+                @Push.performed -= m_Wrapper.m__1KeyboardActionsCallbackInterface.OnPush;
+                @Push.canceled -= m_Wrapper.m__1KeyboardActionsCallbackInterface.OnPush;
+                @Boost.started -= m_Wrapper.m__1KeyboardActionsCallbackInterface.OnBoost;
+                @Boost.performed -= m_Wrapper.m__1KeyboardActionsCallbackInterface.OnBoost;
+                @Boost.canceled -= m_Wrapper.m__1KeyboardActionsCallbackInterface.OnBoost;
             }
-            m_Wrapper.m_KlobyActionsCallbackInterface = instance;
+            m_Wrapper.m__1KeyboardActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @WASDMovement.started += instance.OnWASDMovement;
-                @WASDMovement.performed += instance.OnWASDMovement;
-                @WASDMovement.canceled += instance.OnWASDMovement;
-                @WASDPull.started += instance.OnWASDPull;
-                @WASDPull.performed += instance.OnWASDPull;
-                @WASDPull.canceled += instance.OnWASDPull;
-                @WASDPush.started += instance.OnWASDPush;
-                @WASDPush.performed += instance.OnWASDPush;
-                @WASDPush.canceled += instance.OnWASDPush;
-                @WASDboost.started += instance.OnWASDboost;
-                @WASDboost.performed += instance.OnWASDboost;
-                @WASDboost.canceled += instance.OnWASDboost;
-                @ArrowsMovement.started += instance.OnArrowsMovement;
-                @ArrowsMovement.performed += instance.OnArrowsMovement;
-                @ArrowsMovement.canceled += instance.OnArrowsMovement;
-                @ArrowsPush.started += instance.OnArrowsPush;
-                @ArrowsPush.performed += instance.OnArrowsPush;
-                @ArrowsPush.canceled += instance.OnArrowsPush;
-                @ArrowsPull.started += instance.OnArrowsPull;
-                @ArrowsPull.performed += instance.OnArrowsPull;
-                @ArrowsPull.canceled += instance.OnArrowsPull;
-                @Arrowsboost.started += instance.OnArrowsboost;
-                @Arrowsboost.performed += instance.OnArrowsboost;
-                @Arrowsboost.canceled += instance.OnArrowsboost;
-                @Quit.started += instance.OnQuit;
-                @Quit.performed += instance.OnQuit;
-                @Quit.canceled += instance.OnQuit;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Pull.started += instance.OnPull;
+                @Pull.performed += instance.OnPull;
+                @Pull.canceled += instance.OnPull;
+                @Push.started += instance.OnPush;
+                @Push.performed += instance.OnPush;
+                @Push.canceled += instance.OnPush;
+                @Boost.started += instance.OnBoost;
+                @Boost.performed += instance.OnBoost;
+                @Boost.canceled += instance.OnBoost;
             }
         }
     }
-    public KlobyActions @Kloby => new KlobyActions(this);
+    public _1KeyboardActions @_1Keyboard => new _1KeyboardActions(this);
 
-    // Kloby1
-    private readonly InputActionMap m_Kloby1;
-    private IKloby1Actions m_Kloby1ActionsCallbackInterface;
-    private readonly InputAction m_Kloby1_WASDMovement;
-    private readonly InputAction m_Kloby1_WASDPull;
-    private readonly InputAction m_Kloby1_WASDPush;
-    private readonly InputAction m_Kloby1_WASDboost;
-    private readonly InputAction m_Kloby1_ArrowsMovement;
-    private readonly InputAction m_Kloby1_ArrowsPush;
-    private readonly InputAction m_Kloby1_ArrowsPull;
-    private readonly InputAction m_Kloby1_Arrowsboost;
-    private readonly InputAction m_Kloby1_Quit;
-    public struct Kloby1Actions
+    // 2Keyboard
+    private readonly InputActionMap m__2Keyboard;
+    private I_2KeyboardActions m__2KeyboardActionsCallbackInterface;
+    private readonly InputAction m__2Keyboard_Move;
+    private readonly InputAction m__2Keyboard_Pull;
+    private readonly InputAction m__2Keyboard_Push;
+    private readonly InputAction m__2Keyboard_Boost;
+    public struct _2KeyboardActions
     {
         private @GameInput m_Wrapper;
-        public Kloby1Actions(@GameInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @WASDMovement => m_Wrapper.m_Kloby1_WASDMovement;
-        public InputAction @WASDPull => m_Wrapper.m_Kloby1_WASDPull;
-        public InputAction @WASDPush => m_Wrapper.m_Kloby1_WASDPush;
-        public InputAction @WASDboost => m_Wrapper.m_Kloby1_WASDboost;
-        public InputAction @ArrowsMovement => m_Wrapper.m_Kloby1_ArrowsMovement;
-        public InputAction @ArrowsPush => m_Wrapper.m_Kloby1_ArrowsPush;
-        public InputAction @ArrowsPull => m_Wrapper.m_Kloby1_ArrowsPull;
-        public InputAction @Arrowsboost => m_Wrapper.m_Kloby1_Arrowsboost;
-        public InputAction @Quit => m_Wrapper.m_Kloby1_Quit;
-        public InputActionMap Get() { return m_Wrapper.m_Kloby1; }
+        public _2KeyboardActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m__2Keyboard_Move;
+        public InputAction @Pull => m_Wrapper.m__2Keyboard_Pull;
+        public InputAction @Push => m_Wrapper.m__2Keyboard_Push;
+        public InputAction @Boost => m_Wrapper.m__2Keyboard_Boost;
+        public InputActionMap Get() { return m_Wrapper.m__2Keyboard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(Kloby1Actions set) { return set.Get(); }
-        public void SetCallbacks(IKloby1Actions instance)
+        public static implicit operator InputActionMap(_2KeyboardActions set) { return set.Get(); }
+        public void SetCallbacks(I_2KeyboardActions instance)
         {
-            if (m_Wrapper.m_Kloby1ActionsCallbackInterface != null)
+            if (m_Wrapper.m__2KeyboardActionsCallbackInterface != null)
             {
-                @WASDMovement.started -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnWASDMovement;
-                @WASDMovement.performed -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnWASDMovement;
-                @WASDMovement.canceled -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnWASDMovement;
-                @WASDPull.started -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnWASDPull;
-                @WASDPull.performed -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnWASDPull;
-                @WASDPull.canceled -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnWASDPull;
-                @WASDPush.started -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnWASDPush;
-                @WASDPush.performed -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnWASDPush;
-                @WASDPush.canceled -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnWASDPush;
-                @WASDboost.started -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnWASDboost;
-                @WASDboost.performed -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnWASDboost;
-                @WASDboost.canceled -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnWASDboost;
-                @ArrowsMovement.started -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnArrowsMovement;
-                @ArrowsMovement.performed -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnArrowsMovement;
-                @ArrowsMovement.canceled -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnArrowsMovement;
-                @ArrowsPush.started -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnArrowsPush;
-                @ArrowsPush.performed -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnArrowsPush;
-                @ArrowsPush.canceled -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnArrowsPush;
-                @ArrowsPull.started -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnArrowsPull;
-                @ArrowsPull.performed -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnArrowsPull;
-                @ArrowsPull.canceled -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnArrowsPull;
-                @Arrowsboost.started -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnArrowsboost;
-                @Arrowsboost.performed -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnArrowsboost;
-                @Arrowsboost.canceled -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnArrowsboost;
-                @Quit.started -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnQuit;
-                @Quit.performed -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnQuit;
-                @Quit.canceled -= m_Wrapper.m_Kloby1ActionsCallbackInterface.OnQuit;
+                @Move.started -= m_Wrapper.m__2KeyboardActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m__2KeyboardActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m__2KeyboardActionsCallbackInterface.OnMove;
+                @Pull.started -= m_Wrapper.m__2KeyboardActionsCallbackInterface.OnPull;
+                @Pull.performed -= m_Wrapper.m__2KeyboardActionsCallbackInterface.OnPull;
+                @Pull.canceled -= m_Wrapper.m__2KeyboardActionsCallbackInterface.OnPull;
+                @Push.started -= m_Wrapper.m__2KeyboardActionsCallbackInterface.OnPush;
+                @Push.performed -= m_Wrapper.m__2KeyboardActionsCallbackInterface.OnPush;
+                @Push.canceled -= m_Wrapper.m__2KeyboardActionsCallbackInterface.OnPush;
+                @Boost.started -= m_Wrapper.m__2KeyboardActionsCallbackInterface.OnBoost;
+                @Boost.performed -= m_Wrapper.m__2KeyboardActionsCallbackInterface.OnBoost;
+                @Boost.canceled -= m_Wrapper.m__2KeyboardActionsCallbackInterface.OnBoost;
             }
-            m_Wrapper.m_Kloby1ActionsCallbackInterface = instance;
+            m_Wrapper.m__2KeyboardActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @WASDMovement.started += instance.OnWASDMovement;
-                @WASDMovement.performed += instance.OnWASDMovement;
-                @WASDMovement.canceled += instance.OnWASDMovement;
-                @WASDPull.started += instance.OnWASDPull;
-                @WASDPull.performed += instance.OnWASDPull;
-                @WASDPull.canceled += instance.OnWASDPull;
-                @WASDPush.started += instance.OnWASDPush;
-                @WASDPush.performed += instance.OnWASDPush;
-                @WASDPush.canceled += instance.OnWASDPush;
-                @WASDboost.started += instance.OnWASDboost;
-                @WASDboost.performed += instance.OnWASDboost;
-                @WASDboost.canceled += instance.OnWASDboost;
-                @ArrowsMovement.started += instance.OnArrowsMovement;
-                @ArrowsMovement.performed += instance.OnArrowsMovement;
-                @ArrowsMovement.canceled += instance.OnArrowsMovement;
-                @ArrowsPush.started += instance.OnArrowsPush;
-                @ArrowsPush.performed += instance.OnArrowsPush;
-                @ArrowsPush.canceled += instance.OnArrowsPush;
-                @ArrowsPull.started += instance.OnArrowsPull;
-                @ArrowsPull.performed += instance.OnArrowsPull;
-                @ArrowsPull.canceled += instance.OnArrowsPull;
-                @Arrowsboost.started += instance.OnArrowsboost;
-                @Arrowsboost.performed += instance.OnArrowsboost;
-                @Arrowsboost.canceled += instance.OnArrowsboost;
-                @Quit.started += instance.OnQuit;
-                @Quit.performed += instance.OnQuit;
-                @Quit.canceled += instance.OnQuit;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Pull.started += instance.OnPull;
+                @Pull.performed += instance.OnPull;
+                @Pull.canceled += instance.OnPull;
+                @Push.started += instance.OnPush;
+                @Push.performed += instance.OnPush;
+                @Push.canceled += instance.OnPush;
+                @Boost.started += instance.OnBoost;
+                @Boost.performed += instance.OnBoost;
+                @Boost.canceled += instance.OnBoost;
             }
         }
     }
-    public Kloby1Actions @Kloby1 => new Kloby1Actions(this);
-    public interface IKlobyActions
+    public _2KeyboardActions @_2Keyboard => new _2KeyboardActions(this);
+
+    // 1Controller
+    private readonly InputActionMap m__1Controller;
+    private I_1ControllerActions m__1ControllerActionsCallbackInterface;
+    private readonly InputAction m__1Controller_Move;
+    private readonly InputAction m__1Controller_Pull;
+    private readonly InputAction m__1Controller_Push;
+    private readonly InputAction m__1Controller_Boost;
+    public struct _1ControllerActions
     {
-        void OnWASDMovement(InputAction.CallbackContext context);
-        void OnWASDPull(InputAction.CallbackContext context);
-        void OnWASDPush(InputAction.CallbackContext context);
-        void OnWASDboost(InputAction.CallbackContext context);
-        void OnArrowsMovement(InputAction.CallbackContext context);
-        void OnArrowsPush(InputAction.CallbackContext context);
-        void OnArrowsPull(InputAction.CallbackContext context);
-        void OnArrowsboost(InputAction.CallbackContext context);
-        void OnQuit(InputAction.CallbackContext context);
+        private @GameInput m_Wrapper;
+        public _1ControllerActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m__1Controller_Move;
+        public InputAction @Pull => m_Wrapper.m__1Controller_Pull;
+        public InputAction @Push => m_Wrapper.m__1Controller_Push;
+        public InputAction @Boost => m_Wrapper.m__1Controller_Boost;
+        public InputActionMap Get() { return m_Wrapper.m__1Controller; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(_1ControllerActions set) { return set.Get(); }
+        public void SetCallbacks(I_1ControllerActions instance)
+        {
+            if (m_Wrapper.m__1ControllerActionsCallbackInterface != null)
+            {
+                @Move.started -= m_Wrapper.m__1ControllerActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m__1ControllerActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m__1ControllerActionsCallbackInterface.OnMove;
+                @Pull.started -= m_Wrapper.m__1ControllerActionsCallbackInterface.OnPull;
+                @Pull.performed -= m_Wrapper.m__1ControllerActionsCallbackInterface.OnPull;
+                @Pull.canceled -= m_Wrapper.m__1ControllerActionsCallbackInterface.OnPull;
+                @Push.started -= m_Wrapper.m__1ControllerActionsCallbackInterface.OnPush;
+                @Push.performed -= m_Wrapper.m__1ControllerActionsCallbackInterface.OnPush;
+                @Push.canceled -= m_Wrapper.m__1ControllerActionsCallbackInterface.OnPush;
+                @Boost.started -= m_Wrapper.m__1ControllerActionsCallbackInterface.OnBoost;
+                @Boost.performed -= m_Wrapper.m__1ControllerActionsCallbackInterface.OnBoost;
+                @Boost.canceled -= m_Wrapper.m__1ControllerActionsCallbackInterface.OnBoost;
+            }
+            m_Wrapper.m__1ControllerActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Pull.started += instance.OnPull;
+                @Pull.performed += instance.OnPull;
+                @Pull.canceled += instance.OnPull;
+                @Push.started += instance.OnPush;
+                @Push.performed += instance.OnPush;
+                @Push.canceled += instance.OnPush;
+                @Boost.started += instance.OnBoost;
+                @Boost.performed += instance.OnBoost;
+                @Boost.canceled += instance.OnBoost;
+            }
+        }
     }
-    public interface IKloby1Actions
+    public _1ControllerActions @_1Controller => new _1ControllerActions(this);
+
+    // 2Controller
+    private readonly InputActionMap m__2Controller;
+    private I_2ControllerActions m__2ControllerActionsCallbackInterface;
+    private readonly InputAction m__2Controller_Move;
+    private readonly InputAction m__2Controller_Pull;
+    private readonly InputAction m__2Controller_Push;
+    private readonly InputAction m__2Controller_Boost;
+    public struct _2ControllerActions
     {
-        void OnWASDMovement(InputAction.CallbackContext context);
-        void OnWASDPull(InputAction.CallbackContext context);
-        void OnWASDPush(InputAction.CallbackContext context);
-        void OnWASDboost(InputAction.CallbackContext context);
-        void OnArrowsMovement(InputAction.CallbackContext context);
-        void OnArrowsPush(InputAction.CallbackContext context);
-        void OnArrowsPull(InputAction.CallbackContext context);
-        void OnArrowsboost(InputAction.CallbackContext context);
-        void OnQuit(InputAction.CallbackContext context);
+        private @GameInput m_Wrapper;
+        public _2ControllerActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m__2Controller_Move;
+        public InputAction @Pull => m_Wrapper.m__2Controller_Pull;
+        public InputAction @Push => m_Wrapper.m__2Controller_Push;
+        public InputAction @Boost => m_Wrapper.m__2Controller_Boost;
+        public InputActionMap Get() { return m_Wrapper.m__2Controller; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(_2ControllerActions set) { return set.Get(); }
+        public void SetCallbacks(I_2ControllerActions instance)
+        {
+            if (m_Wrapper.m__2ControllerActionsCallbackInterface != null)
+            {
+                @Move.started -= m_Wrapper.m__2ControllerActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m__2ControllerActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m__2ControllerActionsCallbackInterface.OnMove;
+                @Pull.started -= m_Wrapper.m__2ControllerActionsCallbackInterface.OnPull;
+                @Pull.performed -= m_Wrapper.m__2ControllerActionsCallbackInterface.OnPull;
+                @Pull.canceled -= m_Wrapper.m__2ControllerActionsCallbackInterface.OnPull;
+                @Push.started -= m_Wrapper.m__2ControllerActionsCallbackInterface.OnPush;
+                @Push.performed -= m_Wrapper.m__2ControllerActionsCallbackInterface.OnPush;
+                @Push.canceled -= m_Wrapper.m__2ControllerActionsCallbackInterface.OnPush;
+                @Boost.started -= m_Wrapper.m__2ControllerActionsCallbackInterface.OnBoost;
+                @Boost.performed -= m_Wrapper.m__2ControllerActionsCallbackInterface.OnBoost;
+                @Boost.canceled -= m_Wrapper.m__2ControllerActionsCallbackInterface.OnBoost;
+            }
+            m_Wrapper.m__2ControllerActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Pull.started += instance.OnPull;
+                @Pull.performed += instance.OnPull;
+                @Pull.canceled += instance.OnPull;
+                @Push.started += instance.OnPush;
+                @Push.performed += instance.OnPush;
+                @Push.canceled += instance.OnPush;
+                @Boost.started += instance.OnBoost;
+                @Boost.performed += instance.OnBoost;
+                @Boost.canceled += instance.OnBoost;
+            }
+        }
+    }
+    public _2ControllerActions @_2Controller => new _2ControllerActions(this);
+    private int m_CCSchemeIndex = -1;
+    public InputControlScheme CCScheme
+    {
+        get
+        {
+            if (m_CCSchemeIndex == -1) m_CCSchemeIndex = asset.FindControlSchemeIndex("CC");
+            return asset.controlSchemes[m_CCSchemeIndex];
+        }
+    }
+    private int m_KCSchemeIndex = -1;
+    public InputControlScheme KCScheme
+    {
+        get
+        {
+            if (m_KCSchemeIndex == -1) m_KCSchemeIndex = asset.FindControlSchemeIndex("KC");
+            return asset.controlSchemes[m_KCSchemeIndex];
+        }
+    }
+    public interface I_1KeyboardActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnPull(InputAction.CallbackContext context);
+        void OnPush(InputAction.CallbackContext context);
+        void OnBoost(InputAction.CallbackContext context);
+    }
+    public interface I_2KeyboardActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnPull(InputAction.CallbackContext context);
+        void OnPush(InputAction.CallbackContext context);
+        void OnBoost(InputAction.CallbackContext context);
+    }
+    public interface I_1ControllerActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnPull(InputAction.CallbackContext context);
+        void OnPush(InputAction.CallbackContext context);
+        void OnBoost(InputAction.CallbackContext context);
+    }
+    public interface I_2ControllerActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnPull(InputAction.CallbackContext context);
+        void OnPush(InputAction.CallbackContext context);
+        void OnBoost(InputAction.CallbackContext context);
     }
 }
