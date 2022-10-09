@@ -20,6 +20,16 @@ public class InputManager : MonoBehaviour
         this.gameInput = game;
     }
 
+    public void JoinP1()
+    {
+
+    }
+
+    public void JoinP2()
+    {
+
+    }
+
     private void QuitAction_performed(InputAction.CallbackContext obj)
     {
 #if UNITY_EDITOR
@@ -33,6 +43,7 @@ public class InputManager : MonoBehaviour
         var actions = game.Kloby;
         actions.Quit.performed += QuitAction_performed;
         actions.Quit.Enable();
+        
         blue.SetInputAction(
             actions.WASDMovement,
             actions.WASDboost);

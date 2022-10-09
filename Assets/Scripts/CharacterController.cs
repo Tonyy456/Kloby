@@ -8,6 +8,7 @@ public class CharacterController : MonoBehaviour
 {
     [Header("PLAYER OBJECT")]
     [SerializeField] private GameObject playerObject;
+    [SerializeField] private bool leftPlayer;
     public PullBehavior PullBehavior {
         get
         {
@@ -20,9 +21,9 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private Slider hold;
 
     [Header("MOVEMENT")]
-    [SerializeField] private float walkingSpeed = 5;
-    [SerializeField] private float sprintSpeed = 10;
-    [SerializeField] private float rotationSpeed = 10000;
+    private float walkingSpeed = 5;
+    private float sprintSpeed = 10;
+    private float rotationSpeed = 10000;
 
     [Header("FORCE CONTROL")]
     [SerializeField] private float springConstant = 0;
@@ -40,6 +41,21 @@ public class CharacterController : MonoBehaviour
     private float movespeed;
     private GameObject colliderChecker;
     private bool isBoosting;
+
+    public void Start()
+    {
+        Player p;
+        if(leftPlayer)
+        {
+            p = Game.leftPlayer;
+        } else
+        {
+            p = Game.rightPlayer;
+        }
+        playerObject.GetComponent<SpriteRenderer>().sprite = p.sprite;
+        walkingSpeed = p.WalkSpeed;
+        sprintSpeed = p.SprintSpeed;
+    }
 
     public void SetInputAction(InputAction input, InputAction boost)
     {
@@ -77,11 +93,14 @@ public class CharacterController : MonoBehaviour
         pullAction.Enable();
         colliderChecker = collider;
 
-        Game.OnPointChange += CleanComponents;
+        Game.OnPointChange += Reset;
     }
 
-    private void CleanComponents()
+    private void Reset()
     {
+        run.value = 1;
+        hold.value = 1;
+        playerObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         Destroy(playerObject.GetComponent<PushBehavior>());
         Destroy(playerObject.GetComponent<PullBehavior>());
     }
@@ -110,9 +129,15 @@ public class CharacterController : MonoBehaviour
             var comp = outObj.AddComponent<PullColliderCheck>();
             comp.callerObject = playerObject.gameObject;
             comp.flip = flipRotation;
+            comp.maxDistance = ballMaxDistance;
         }
 
         outObj.transform.position = playerObject.transform.position + Quaternion.AngleAxis(-90, new Vector3(0, 0, 1)) * playerObject.transform.up.normalized;
+    }
+
+    public void Move(Vector2 v)
+    {
+        
     }
 
     public void Update()

@@ -8,12 +8,11 @@ public class PushColliderCheck : MonoBehaviour
     public float pushForce = 100f;
     public void Start()
     {
-        Debug.Log("Created and: ", callerObject);
         StartCoroutine(StartDisappear());
     }
     private IEnumerator StartDisappear()
     {
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.2f);
         Destroy(this.gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,6 +23,7 @@ public class PushColliderCheck : MonoBehaviour
             Vector2 direction = collision.gameObject.transform.position - callerObject.transform.position;
             direction.Normalize();
             collision.gameObject.AddComponent<PushBehavior>().Initialize(direction, pushForce, 1f);
+            Destroy(this.gameObject);
         }
     }
 }

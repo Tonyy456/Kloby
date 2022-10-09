@@ -6,6 +6,7 @@ public class PullBehavior : MonoBehaviour
 {
     public GameObject pullObject;
     public bool flip;
+    public float maxDistance;
     private const float rotationSpeed = 1000f;
     [SerializeField] private float scaleY = 0.08f;
     [SerializeField] private float scaleX = 1f;
@@ -36,8 +37,12 @@ public class PullBehavior : MonoBehaviour
         pullObject.transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation,0.01f);
 
         //Keep ball a certain distance away
-        if (direction.magnitude > 1.5)
-            pullObject.transform.position = Vector2.MoveTowards(pullObject.transform.position, transform.position, 0.1f);
+        if (direction.magnitude > maxDistance)
+        {
+            var rb = pullObject.GetComponent<Rigidbody2D>();
+            Vector2 force = this.transform.position - pullObject.transform.position;
+            rb.AddForce(force);
+        }
 
         // update rope
         rope.transform.position = this.transform.position + direction / 2;

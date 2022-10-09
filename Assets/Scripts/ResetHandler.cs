@@ -19,17 +19,23 @@ public class ResetHandler : MonoBehaviour
         }
 
     }
+    public void DoDebug()
+    {
+        Debug.Log("Debugging!");
+    }
 
     public void Reset()
     {
         foreach(var charCon in charReset)
         {
-            Debug.Log("Destroying: ", charCon.PullBehavior);
             Destroy(charCon.PullBehavior);
         }
         for (int i = 0; i < posReset.Count; i++)
         {
             var item = posReset[i];
+            var rb = item.GetComponent<Rigidbody2D>();
+            if (rb)
+                rb.velocity = Vector2.zero;
             item.transform.position = startPositions[i];
             item.transform.rotation = startRotations[i];
         }
