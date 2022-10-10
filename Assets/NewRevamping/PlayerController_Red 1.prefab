@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8417079278330540835
+--- !u!1 &6996094903169781669
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8417079278330540837}
-  - component: {fileID: 8417079278330540839}
-  - component: {fileID: 8417079278330540840}
+  - component: {fileID: 6996094903169781667}
+  - component: {fileID: 6996094903169781665}
+  - component: {fileID: 6996094903169781678}
   m_Layer: 0
-  m_Name: PlayerController_Red
+  m_Name: PlayerController_Red 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8417079278330540837
+--- !u!4 &6996094903169781667
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8417079278330540835}
+  m_GameObject: {fileID: 6996094903169781669}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.45669526, y: -0.28100196, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8417079278330540839
+--- !u!114 &6996094903169781665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8417079278330540835}
+  m_GameObject: {fileID: 6996094903169781669}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
@@ -64,7 +64,7 @@ MonoBehaviour:
     m_ActionName: KlobyController1/Move[/DualShock4GamepadHID1/leftStick,/DualShock4GamepadHID/leftStick]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8417079278330540840}
+      - m_Target: {fileID: 6996094903169781678}
         m_TargetAssemblyTypeName: NCC, Assembly-CSharp
         m_MethodName: Pull
         m_Mode: 1
@@ -80,7 +80,7 @@ MonoBehaviour:
     m_ActionName: KlobyController1/Pull[/DualShock4GamepadHID1/buttonEast,/DualShock4GamepadHID/buttonEast]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8417079278330540840}
+      - m_Target: {fileID: 6996094903169781678}
         m_TargetAssemblyTypeName: NCC, Assembly-CSharp
         m_MethodName: Push
         m_Mode: 1
@@ -96,7 +96,7 @@ MonoBehaviour:
     m_ActionName: KlobyController1/Push[/DualShock4GamepadHID1/buttonSouth,/DualShock4GamepadHID/buttonSouth]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8417079278330540840}
+      - m_Target: {fileID: 6996094903169781678}
         m_TargetAssemblyTypeName: NCC, Assembly-CSharp
         m_MethodName: Sprint
         m_Mode: 1
@@ -116,7 +116,7 @@ MonoBehaviour:
     m_ActionName: KlobyController2/Move[/DualShock4GamepadHID1/leftStick,/DualShock4GamepadHID/leftStick]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8417079278330540840}
+      - m_Target: {fileID: 6996094903169781678}
         m_TargetAssemblyTypeName: NCC, Assembly-CSharp
         m_MethodName: Pull
         m_Mode: 1
@@ -132,7 +132,7 @@ MonoBehaviour:
     m_ActionName: KlobyController2/Pull[/DualShock4GamepadHID1/buttonEast,/DualShock4GamepadHID/buttonEast]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8417079278330540840}
+      - m_Target: {fileID: 6996094903169781678}
         m_TargetAssemblyTypeName: NCC, Assembly-CSharp
         m_MethodName: Push
         m_Mode: 1
@@ -148,7 +148,7 @@ MonoBehaviour:
     m_ActionName: KlobyController2/Push[/DualShock4GamepadHID1/buttonSouth,/DualShock4GamepadHID/buttonSouth]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8417079278330540840}
+      - m_Target: {fileID: 6996094903169781678}
         m_TargetAssemblyTypeName: NCC, Assembly-CSharp
         m_MethodName: Sprint
         m_Mode: 1
@@ -168,7 +168,7 @@ MonoBehaviour:
     m_ActionName: KlobyKeyboard1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8417079278330540840}
+      - m_Target: {fileID: 6996094903169781678}
         m_TargetAssemblyTypeName: NCC, Assembly-CSharp
         m_MethodName: Pull
         m_Mode: 1
@@ -184,7 +184,7 @@ MonoBehaviour:
     m_ActionName: KlobyKeyboard1/Pull[/Keyboard/k]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8417079278330540840}
+      - m_Target: {fileID: 6996094903169781678}
         m_TargetAssemblyTypeName: NCC, Assembly-CSharp
         m_MethodName: Push
         m_Mode: 1
@@ -200,7 +200,7 @@ MonoBehaviour:
     m_ActionName: KlobyKeyboard1/Push[/Keyboard/j]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8417079278330540840}
+      - m_Target: {fileID: 6996094903169781678}
         m_TargetAssemblyTypeName: NCC, Assembly-CSharp
         m_MethodName: Sprint
         m_Mode: 1
@@ -220,7 +220,7 @@ MonoBehaviour:
     m_ActionName: KlobyKeyboard2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8417079278330540840}
+      - m_Target: {fileID: 6996094903169781678}
         m_TargetAssemblyTypeName: NCC, Assembly-CSharp
         m_MethodName: Pull
         m_Mode: 1
@@ -236,7 +236,7 @@ MonoBehaviour:
     m_ActionName: KlobyKeyboard2/Pull[/Keyboard/numpadPeriod]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8417079278330540840}
+      - m_Target: {fileID: 6996094903169781678}
         m_TargetAssemblyTypeName: NCC, Assembly-CSharp
         m_MethodName: Push
         m_Mode: 1
@@ -252,7 +252,7 @@ MonoBehaviour:
     m_ActionName: KlobyKeyboard2/Push[/Keyboard/numpad0]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8417079278330540840}
+      - m_Target: {fileID: 6996094903169781678}
         m_TargetAssemblyTypeName: NCC, Assembly-CSharp
         m_MethodName: Sprint
         m_Mode: 1
@@ -268,16 +268,16 @@ MonoBehaviour:
     m_ActionName: KlobyKeyboard2/Boost[/Keyboard/numpadEnter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 74c5c082-e696-4386-b123-cc0c4cf50b28
+  m_DefaultActionMap: 2Keyboard
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &8417079278330540840
+--- !u!114 &6996094903169781678
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8417079278330540835}
+  m_GameObject: {fileID: 6996094903169781669}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7e0b2cd4c7744548afc59c91019b50d, type: 3}

@@ -464,29 +464,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": [
-        {
-            ""name"": ""CC"",
-            ""bindingGroup"": ""CC"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Gamepad>"",
-                    ""isOptional"": false,
-                    ""isOR"": false
-                },
-                {
-                    ""devicePath"": ""<Gamepad>"",
-                    ""isOptional"": false,
-                    ""isOR"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""KC"",
-            ""bindingGroup"": ""KC"",
-            ""devices"": []
-        }
-    ]
+    ""controlSchemes"": []
 }");
         // 1Keyboard
         m__1Keyboard = asset.FindActionMap("1Keyboard", throwIfNotFound: true);
@@ -795,24 +773,6 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         }
     }
     public _2ControllerActions @_2Controller => new _2ControllerActions(this);
-    private int m_CCSchemeIndex = -1;
-    public InputControlScheme CCScheme
-    {
-        get
-        {
-            if (m_CCSchemeIndex == -1) m_CCSchemeIndex = asset.FindControlSchemeIndex("CC");
-            return asset.controlSchemes[m_CCSchemeIndex];
-        }
-    }
-    private int m_KCSchemeIndex = -1;
-    public InputControlScheme KCScheme
-    {
-        get
-        {
-            if (m_KCSchemeIndex == -1) m_KCSchemeIndex = asset.FindControlSchemeIndex("KC");
-            return asset.controlSchemes[m_KCSchemeIndex];
-        }
-    }
     public interface I_1KeyboardActions
     {
         void OnMove(InputAction.CallbackContext context);
