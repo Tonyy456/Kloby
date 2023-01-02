@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
 using Unity.Netcode;
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,83 +10,60 @@ public class PlayerController2DTD : NetworkBehaviour
 {
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float rotationSpeed = 3f;
-    [SerializeField] private Transform ballPrefab;
-    private Transform go;
 
-    private NetworkVariable<MyData> randomNumber = new NetworkVariable<MyData>(new MyData {
-        myId = 0,
-        isCool = false,
-    }, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    [SerializeField] private bool isOwner = false;
+    private Camera cam;
 
-    public struct MyData : INetworkSerializable
+    Animator animator;
+
+    public void OnEnable()
     {
-        public int myId;
-        public bool isCool;
-        public FixedString128Bytes message;
-
-        public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+        GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
+        foreach(GameObject b in balls)
         {
-            serializer.SerializeValue(ref myId);
-            serializer.SerializeValue(ref isCool);
-            serializer.SerializeValue(ref message);
-        }
+            Physics2D.IgnoreCollision(b.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+            Debug.Log("ignoring collision between player and: " + b.name);
+        }     
+    }
+    public void Start()
+    {
+        animator = GetComponent<Animator>();  
     }
 
-    [ClientRpc]
-    public void TestClientRpc(ClientRpcParams item)
+    public void Register(Camera cam)
     {
-        Debug.Log($"Received message from {OwnerClientId}");
-    }
-
-    [ServerRpc]
-    public void TestServerRpc()
-    {
-        Debug.Log("TestServerRpc " + OwnerClientId);
-    }
-
-    public override void OnNetworkSpawn()
-    {
-        randomNumber.OnValueChanged += (MyData previousValue, MyData newValue) =>
-        {        
-            //Debug.Log(OwnerClientId + $" values: {newValue.myId},{newValue.isCool},{newValue.message}");
-        };
-        base.OnNetworkSpawn();
+        this.cam = cam;
     }
     public void Update()
-    {   
+    {
+        isOwner = IsOwner;
         if (!IsOwner) return;
-
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            Transform obj = Instantiate(ballPrefab);
-            obj.GetComponent<NetworkObject>().Spawn(true);
-            /*
-            TestClientRpc(new ClientRpcParams() { Send = new ClientRpcSendParams() { TargetClientIds = new List<ulong>() { 1 } } });
-            randomNumber.Value = new MyData()
-            {
-                myId = Random.Range(0,100),
-                isCool = !randomNumber.Value.isCool,
-                message = "test data",
-            };
-            */
-        }
-
-        if(Input.GetKeyDown(KeyCode.Y))
-        {
-            Destroy(go.gameObject);
-        }
 
         Vector3 keyDirection = new Vector3(0, 0, 0);
         if (Input.GetKey(KeyCode.W)) keyDirection.y = +1f;
         if (Input.GetKey(KeyCode.A)) keyDirection.x = -1f;
         if (Input.GetKey(KeyCode.S)) keyDirection.y = -1f;
         if (Input.GetKey(KeyCode.D)) keyDirection.x = +1f;
+        if (keyDirection.magnitude > 0.01f) keyDirection.Normalize();
 
         transform.position += keyDirection * moveSpeed * Time.deltaTime;
-        if (keyDirection.magnitude > 0.1f)
+        if(cam != null)
         {
-            Quaternion quaternionRotation = Quaternion.LookRotation(this.transform.forward, keyDirection);
-            transform.rotation = Quaternion.RotateTowards(this.transform.rotation, quaternionRotation, 360f);
+            Vector3 rotateDirection = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            RotateTo(rotateDirection, rotationSpeed);
+        } 
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            animator.Play("Swipe");
         }
+    }
+
+    private void RotateTo(Vector3 facing, float speed)
+    {
+        Debug.DrawRay(transform.position, facing);
+        facing.z = 0;
+        Quaternion quaternionRotation = Quaternion.LookRotation(this.transform.forward, facing);
+        transform.rotation = Quaternion.RotateTowards(this.transform.rotation, quaternionRotation, 3 * speed * Time.deltaTime);
     }
 }
